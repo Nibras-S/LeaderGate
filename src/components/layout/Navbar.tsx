@@ -31,7 +31,7 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const scrollSentinelRef = useRef<HTMLSpanElement>(null);
-  const isLight = appearance === "light" && !scrolled;
+  const usesDarkInk = scrolled || appearance === "light";
 
   // Observe a single threshold instead of doing work on every scroll event.
   useEffect(() => {
@@ -76,14 +76,21 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
       />
       {/* Fixed Header — Full-width edge-to-edge layout matching reference */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-40 isolate transition-[padding,box-shadow] duration-300 ${
           scrolled
-            ? "bg-[#0F0F0D]/90 backdrop-blur-md border-b border-white/10 shadow-lg py-4"
+            ? "py-4 shadow-[0_8px_24px_rgba(15,23,42,0.08)]"
             : appearance === "light"
               ? "bg-[#F9F8F5]/90 backdrop-blur-md border-b border-[#1A1A18]/[0.06] py-5 sm:py-6"
               : "bg-gradient-to-b from-black/60 via-black/15 to-transparent py-5 sm:py-7"
         }`}
       >
+        {scrolled && (
+          <div
+            aria-hidden="true"
+            className="navbar-glass pointer-events-none absolute inset-0 -z-10"
+          />
+        )}
+
         <div className="w-full px-6 sm:px-10 lg:px-14 flex items-center justify-between">
           {/* Logo — Far left */}
           <Link
@@ -93,7 +100,7 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
           >
             <Image
               src={
-                isLight
+                usesDarkInk
                   ? "/leadergate-logo.webp"
                   : "/leadergate-logo-white.webp"
               }
@@ -108,7 +115,7 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
           {appearance === "light" && (
             <p
               className={`absolute left-1/2 hidden -translate-x-1/2 text-[0.625rem] font-semibold uppercase tracking-[0.38em] lg:block ${
-                isLight ? "text-[#1A1A18]/70" : "text-white/70"
+                usesDarkInk ? "text-[#1A1A18]/70" : "text-white/70"
               }`}
             >
               Design&nbsp;&nbsp;/&nbsp;&nbsp;Fabricate&nbsp;&nbsp;/&nbsp;&nbsp;Install
@@ -122,7 +129,7 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
             aria-label="Open navigation menu"
             aria-expanded={menuOpen}
             className={`p-2 -mr-2 hover:opacity-75 transition-opacity cursor-pointer flex flex-col justify-center items-end gap-[5px] sm:gap-[6px] w-10 h-10 ${
-              isLight ? "text-[#1A1A18]" : "text-white"
+              usesDarkInk ? "text-[#1A1A18]" : "text-white"
             }`}
           >
             <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
