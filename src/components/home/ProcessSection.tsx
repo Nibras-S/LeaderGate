@@ -1,124 +1,87 @@
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { inter } from "@/lib/fonts";
 
 const steps = [
   {
     number: "01",
-    title: "Consultation",
+    title: "Consult",
     description:
-      "We begin by understanding your objectives, brand requirements, timeline, and project scope.",
+      "We define the objective, scope, site conditions, programme, and brand requirements.",
   },
   {
     number: "02",
-    title: "Design & Planning",
+    title: "Design & plan",
     description:
-      "Our team develops creative concepts, technical specifications, and production-ready solutions.",
+      "Creative concepts become technical drawings, material choices, and an approved production plan.",
   },
   {
     number: "03",
-    title: "Production & Fabrication",
+    title: "Fabricate",
     description:
-      "Using advanced equipment and premium materials, we manufacture signage and branding assets to the highest standards.",
+      "Our team cuts, forms, prints, finishes, assembles, and tests every element in-house.",
   },
   {
     number: "04",
-    title: "Professional Installation",
+    title: "Install",
     description:
-      "Experienced specialists ensure every installation is completed safely, accurately, and efficiently.",
+      "Specialist crews coordinate access and complete a safe, accurate installation on site.",
   },
   {
     number: "05",
-    title: "Ongoing Support",
+    title: "Support",
     description:
-      "We remain available for maintenance, updates, and future brand expansion requirements.",
+      "We remain available for maintenance, updates, repairs, and future location rollouts.",
   },
 ];
 
-/**
- * PROCESS SECTION — 08
- *
- * CURRENT (structural): Vertical numbered step list.
- *
- * TODO (refinement phase):
- * - Upgrade to horizontal step timeline on desktop
- * - Consider sticky-stack scroll or pinned section with step reveal on scroll
- * - Add connecting line between steps
- * - Number typography: large display treatment in faint orange
- * - Step cards could expand on click to show more detail
- */
 export function ProcessSection() {
   return (
     <section
       id="process"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-surface)" }}
+      className={`relative overflow-hidden bg-[#121210] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <Container>
-        <SectionHeader
-          headline="Simple. Transparent. Reliable."
-          subtext="A structured process that ensures consistent quality and clear communication at every stage."
-        />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:5rem_100%]" />
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
+        <div className="max-w-4xl">
+          <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#F26522]">
+            How we work
+          </p>
+          <h2 className="max-w-[15ch] text-[clamp(2.65rem,5vw,5rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+            Clear from first survey to final handover.
+          </h2>
+          <p className="mt-6 max-w-[42rem] text-base font-light leading-relaxed text-white/60 sm:text-lg">
+            One structured workflow keeps design decisions, production, site
+            access, and delivery moving together.
+          </p>
+        </div>
 
-        {/* Step list */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(1, 1fr)",
-            gap: "0",
-          }}
-        >
+        <ol className="mt-14 grid sm:grid-cols-2 lg:mt-20 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <div
+            <li
               key={step.number}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "auto 1fr",
-                gap: "2rem",
-                padding: "2rem 0",
-                borderBottom:
-                  index < steps.length - 1
-                    ? "1px solid var(--color-border)"
-                    : "none",
-                alignItems: "flex-start",
-              }}
+              className={`relative border-t border-white/15 py-8 sm:min-h-[21rem] sm:px-6 lg:px-7 ${
+                index > 0 ? "lg:border-l" : "lg:pl-0"
+              }`}
             >
-              {/* Step number */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  paddingTop: "0.25rem",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "2rem",
-                    fontWeight: 700,
-                    color: "var(--color-orange)",
-                    lineHeight: 1,
-                    fontVariantNumeric: "tabular-nums",
-                  }}
-                >
-                  {step.number}
-                </span>
-              </div>
-
-              {/* Step content */}
-              <div>
-                <h3
-                  className="text-h4"
-                  style={{ marginBottom: "0.5rem" }}
-                >
+              <span className="block text-5xl font-light tracking-[-0.06em] text-white/12 tabular-nums sm:text-6xl">
+                {step.number}
+              </span>
+              <div className="mt-16 sm:mt-20">
+                <h3 className="text-xl font-medium tracking-[-0.03em] text-white sm:text-2xl">
                   {step.title}
                 </h3>
-                <p className="text-body">{step.description}</p>
+                <p className="mt-3 text-sm font-light leading-relaxed text-white/52">
+                  {step.description}
+                </p>
               </div>
-            </div>
+              <span
+                className={`absolute top-[-1px] h-px w-12 bg-[#F26522] ${
+                  index === 0 ? "left-0" : "left-0 sm:left-6 lg:left-7"
+                }`}
+              />
+            </li>
           ))}
-        </div>
-      </Container>
+        </ol>
+      </div>
     </section>
   );
 }

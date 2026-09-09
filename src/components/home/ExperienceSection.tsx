@@ -1,119 +1,67 @@
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import Image from "next/image";
+import { inter } from "@/lib/fonts";
 
 const stats = [
-  {
-    number: "500+",
-    label: "Projects Delivered",
-  },
-  {
-    number: "100+",
-    label: "Corporate Clients",
-  },
-  {
-    number: "10+",
-    label: "Years of Industry Experience",
-  },
-  {
-    number: "UAE-Wide",
-    label: "Service Coverage",
-  },
+  { number: "500+", label: "Projects delivered" },
+  { number: "100+", label: "Corporate clients" },
+  { number: "10+", label: "Years in the industry" },
+  { number: "7", label: "Emirates covered" },
 ];
 
-/**
- * EXPERIENCE / PROOF SECTION — 09
- *
- * CURRENT (structural): Stats strip + quality copy block.
- * Dark surface for contrast variety.
- *
- * TODO (refinement phase):
- * - Animate numbers on scroll-enter (count-up effect with Motion)
- * - Larger display-scale number treatment
- * - Could feature a full-width project photography background with overlay
- * - Add a "Quality That Speaks for Itself" sub-block with the approved copy
- */
 export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-surface-alt)" }}
+      className={`bg-[#191915] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <Container>
-        <SectionHeader
-          headline="Built on Experience. Driven by Excellence."
-          align="center"
-        />
-
-        {/* Stats grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "2px",
-            marginBottom: "5rem",
-            border: "1px solid var(--color-border)",
-            borderRadius: "var(--radius-card)",
-            overflow: "hidden",
-          }}
-          className="sm:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              style={{
-                padding: "2.5rem 1.5rem",
-                textAlign: "center",
-                backgroundColor: "#ffffff",
-                borderRight: "1px solid var(--color-border)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
-                  fontWeight: 700,
-                  color: "var(--color-orange)",
-                  lineHeight: 1,
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {stat.number}
-              </p>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  color: "var(--color-text-muted)",
-                  fontWeight: 500,
-                }}
-              >
-                {stat.label}
-              </p>
-            </div>
-          ))}
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:items-stretch lg:gap-16 lg:px-14">
+        <div className="relative min-h-[28rem] overflow-hidden rounded-2xl bg-[#262620] lg:col-span-7 lg:min-h-[42rem]">
+          <Image
+            src="/images/about/fabrication-facility.jpg"
+            alt="Leader Gate team operating fabrication equipment in the UAE facility"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 58vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10" />
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
+            <p className="max-w-lg text-lg font-medium leading-snug tracking-[-0.025em] text-white sm:text-2xl">
+              Every project is planned, produced, checked, and installed by teams
+              working to one shared standard.
+            </p>
+          </div>
         </div>
 
-        {/* Quality copy */}
-        <div
-          style={{
-            maxWidth: "68ch",
-            margin: "0 auto",
-            textAlign: "center",
-          }}
-        >
-          <h3 className="text-h3" style={{ marginBottom: "1.25rem" }}>
-            Quality That Speaks for Itself
-          </h3>
-          <p className="text-body-lg" style={{ marginBottom: "1rem" }}>
-            Our reputation has been built through successful project delivery,
-            long-term client relationships, and an unwavering commitment to quality.
-          </p>
-          <p className="text-body">
-            Every sign, branding element, and installation is created with the
-            same goal: to help our clients stand out, communicate effectively,
-            and make a lasting impression.
-          </p>
+        <div className="flex flex-col justify-between lg:col-span-5 lg:py-2">
+          <div>
+            <h2 className="max-w-[12ch] text-[clamp(2.65rem,4.6vw,4.75rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+              Experience you can measure. Quality you can see.
+            </h2>
+            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-white/58 sm:text-lg">
+              Our reputation comes from completed work, repeat clients, and a
+              consistent standard from the first drawing to the final fixing.
+            </p>
+          </div>
+
+          <dl className="mt-12 grid grid-cols-2 border-t border-white/15 lg:mt-16">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={`min-h-36 py-6 ${
+                  index % 2 === 0 ? "pr-5" : "border-l border-white/15 pl-5"
+                } ${index > 1 ? "border-t border-white/15" : ""}`}
+              >
+                <dt className="text-4xl font-medium tracking-[-0.06em] text-[#F26522] tabular-nums sm:text-5xl">
+                  {stat.number}
+                </dt>
+                <dd className="mt-2 max-w-32 text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-white/45">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

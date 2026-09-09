@@ -1,125 +1,89 @@
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
-  Wrench,
-  Cpu,
   ArrowsClockwise,
   Buildings,
+  Cpu,
+  Wrench,
 } from "@phosphor-icons/react/dist/ssr";
+import { inter } from "@/lib/fonts";
 
 const reasons = [
   {
     icon: Wrench,
-    title: "Precision Manufacturing",
+    title: "Precision manufacturing",
     description:
-      "Every element is produced with accuracy, consistency, and premium-quality finishing.",
+      "Controlled production, accurate detailing, and durable finishes across every fabricated element.",
   },
   {
     icon: Cpu,
-    title: "Advanced Technology",
+    title: "Technology in-house",
     description:
-      "Equipped with CNC cutting, laser technology, digital printing, and modern fabrication capabilities to handle projects of all sizes.",
+      "CNC cutting, laser processing, digital printing, and specialist fabrication managed under one roof.",
   },
   {
     icon: ArrowsClockwise,
-    title: "End-to-End Project Delivery",
+    title: "One accountable team",
     description:
-      "From consultation and design to production and installation, every stage is managed by one experienced team.",
+      "Consultation, drawings, production, installation, and support coordinated through one project lead.",
   },
   {
     icon: Buildings,
-    title: "Trusted Across Industries",
+    title: "Built around your site",
     description:
-      "Our portfolio spans banking, government, real estate, healthcare, retail, hospitality, automotive, and corporate sectors throughout the UAE.",
+      "Materials and installation methods selected for the building, audience, climate, and operating hours.",
   },
 ];
 
-/**
- * WHY LEADER GATE SECTION — 07
- *
- * CURRENT (structural): 4-card horizontal/grid row on dark ink background.
- * Dark background adds contrast variety and anchors the page.
- *
- * TODO (refinement phase):
- * - Upgrade card design — currently flat, could use border glow or subtle gradient
- * - Consider animated counter or icon on scroll-enter
- * - Icon hover: rotate or scale animation
- * - Left-aligned section header with large display number on right column
- */
 export function WhyLeaderGateSection() {
   return (
     <section
       id="why-us"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-ink)" }}
+      className={`bg-[#1B1B17] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <Container>
-        <SectionHeader
-          headline="Why Leading Brands Choose Leader Gate"
-          invertColors
-        />
+      <div className="mx-auto grid max-w-[1440px] gap-14 px-6 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:px-14">
+        <div className="lg:col-span-5">
+          <h2 className="max-w-[11ch] text-[clamp(2.65rem,4.6vw,4.75rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+            Less handoff. More control.
+          </h2>
+          <p className="mt-6 max-w-md text-base font-light leading-relaxed text-white/58 sm:text-lg">
+            The people who plan the work stay close to the people who make and
+            install it. That keeps decisions clear and quality consistent.
+          </p>
+          <div className="mt-10 flex items-center gap-4">
+            <strong className="text-5xl font-medium tracking-[-0.06em] text-[#F26522] tabular-nums sm:text-6xl">
+              100%
+            </strong>
+            <span className="max-w-28 text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-white/45">
+              In-house project ownership
+            </span>
+          </div>
+        </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(1, 1fr)",
-            gap: "1.5rem",
-          }}
-          className="sm:grid-cols-2 lg:grid-cols-4"
-        >
+        <div className="grid gap-x-10 sm:grid-cols-2 lg:col-span-7">
           {reasons.map((reason) => {
             const Icon = reason.icon;
+
             return (
-              <div
+              <article
                 key={reason.title}
-                style={{
-                  padding: "2rem",
-                  borderRadius: "var(--radius-card)",
-                  border: "1px solid rgba(249,248,245,0.1)",
-                  backgroundColor: "rgba(249,248,245,0.04)",
-                }}
+                className="group border-t border-white/15 py-7 sm:min-h-64 sm:py-8"
               >
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "var(--radius-sm)",
-                    backgroundColor: "rgba(242,101,34,0.15)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "1.25rem",
-                  }}
-                >
-                  <Icon
-                    size={22}
-                    color="var(--color-orange)"
-                    weight="regular"
-                  />
-                </div>
-                <h3
-                  className="text-h4"
-                  style={{
-                    color: "var(--color-text-invert)",
-                    marginBottom: "0.75rem",
-                  }}
-                >
+                <Icon
+                  size={30}
+                  weight="light"
+                  className="text-[#F26522] transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-8 text-xl font-medium tracking-[-0.03em] text-white sm:text-2xl">
                   {reason.title}
                 </h3>
-                <p
-                  style={{
-                    fontSize: "0.9375rem",
-                    color: "rgba(249,248,245,0.6)",
-                    lineHeight: 1.7,
-                  }}
-                >
+                <p className="mt-3 max-w-sm text-sm font-light leading-relaxed text-white/55 sm:text-base">
                   {reason.description}
                 </p>
-              </div>
+              </article>
             );
           })}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

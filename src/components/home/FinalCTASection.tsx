@@ -1,94 +1,66 @@
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
+import Image from "next/image";
+import { ArrowUpRight, Phone } from "@phosphor-icons/react/dist/ssr";
+import { inter } from "@/lib/fonts";
 
-/**
- * FINAL CTA SECTION — 10
- *
- * CURRENT (structural): Dark ink band with headline, subtext, and 2 CTAs.
- *
- * TODO (refinement phase):
- * - Add a full-bleed background project photography with dark overlay
- * - Large display headline with orange accent word
- * - Consider a subtle animated gradient or brand texture on the dark background
- * - CTA section should have more vertical breathing room (py-32 or more)
- * - Add a small brand mark or geometric accent element
- */
 export function FinalCTASection() {
   return (
     <section
       id="contact"
-      className="section-padding"
-      style={{
-        backgroundColor: "var(--color-ink)",
-        paddingTop: "6rem",
-        paddingBottom: "6rem",
-      }}
+      className={`relative overflow-hidden bg-[#10100E] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <Container>
-        <div style={{ maxWidth: "60ch" }}>
-          <p
-            style={{
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "var(--color-orange)",
-              marginBottom: "1.25rem",
-            }}
-          >
-            Get Started
-          </p>
+      <Image
+        src="/images/about/fabrication-cad.jpg"
+        alt="Leader Gate production planning and technical design"
+        fill
+        className="object-cover opacity-20"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#10100E] via-[#10100E]/95 to-[#10100E]/60" />
 
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 4.5vw, 3.75rem)",
-              fontWeight: 700,
-              color: "var(--color-text-invert)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-              marginBottom: "1.5rem",
-            }}
-          >
-            Let&apos;s Build Something{" "}
-            <span style={{ color: "var(--color-orange)" }}>Remarkable</span>
+      <div className="relative mx-auto grid max-w-[1440px] gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:items-end lg:gap-16 lg:px-14">
+        <div className="lg:col-span-7">
+          <h2 className="max-w-[11ch] text-[clamp(3rem,6vw,6.25rem)] font-medium leading-[0.91] tracking-[-0.06em] text-white text-balance">
+            Bring us the brief. We&apos;ll build the rest.
           </h2>
-
-          <p
-            style={{
-              fontSize: "1.125rem",
-              color: "rgba(249,248,245,0.65)",
-              lineHeight: 1.7,
-              maxWidth: "52ch",
-              marginBottom: "3rem",
-            }}
-          >
-            Whether you&apos;re launching a new business, upgrading a corporate
-            facility, rebranding multiple locations, or developing a large-scale
-            project, Leader Gate is ready to bring your vision to life.
+          <p className="mt-7 max-w-[38rem] text-base font-light leading-relaxed text-white/62 sm:text-lg">
+            Share your site, timeline, and objectives. Our team will respond with
+            the right next step for design, production, or installation.
           </p>
-
-          <p
-            style={{
-              fontSize: "0.9375rem",
-              color: "rgba(249,248,245,0.5)",
-              marginBottom: "2.5rem",
-            }}
-          >
-            Partner with a team trusted by leading organizations across the UAE
-            to deliver signage, branding, and fabrication solutions without
-            compromise.
-          </p>
-
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Button variant="primary" size="lg" href="#contact">
-              Start Your Project
-            </Button>
-            <Button variant="ghost-invert" size="lg" href="#contact">
-              Speak With Our Team
-            </Button>
-          </div>
         </div>
-      </Container>
+
+        <aside className="rounded-2xl bg-[#F26522] p-7 text-white sm:p-9 lg:col-span-5 lg:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/72">
+            Project enquiries
+          </p>
+          <a
+            href="mailto:info@leadergate.ae?subject=New%20project%20enquiry"
+            className="group mt-7 flex items-center justify-between gap-5 border-b border-white/35 pb-6 text-xl font-medium tracking-[-0.03em] text-white transition-colors hover:text-white/75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-2xl"
+          >
+            <span className="break-all">info@leadergate.ae</span>
+            <ArrowUpRight
+              size={23}
+              weight="bold"
+              className="shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </a>
+
+          <a
+            href="tel:+97142958899"
+            className="group mt-6 flex min-h-14 w-full items-center justify-between gap-5 rounded-full bg-[#171715] px-6 text-sm font-semibold text-white transition-[background-color,transform] duration-200 hover:bg-[#292925] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <span className="flex items-center gap-3">
+              <Phone size={18} weight="bold" />
+              Speak with our team
+            </span>
+            <span className="hidden text-white/55 sm:inline">+971 4 295 8899</span>
+          </a>
+
+          <p className="mt-7 text-sm leading-relaxed text-white/68">
+            Serving projects across all seven Emirates from our UAE production
+            facility.
+          </p>
+        </aside>
+      </div>
     </section>
   );
 }
