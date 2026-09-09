@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TrustedClientsSection } from "@/components/home/TrustedClientsSection";
 import { AboutSection } from "@/components/home/AboutSection";
-import { CapabilitiesSection } from "@/components/home/CapabilitiesSection";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { WhyLeaderGateSection } from "@/components/home/WhyLeaderGateSection";
@@ -20,14 +19,13 @@ import { FinalCTASection } from "@/components/home/FinalCTASection";
  * Section order:
  * 01 Hero
  * 02 Trusted Clients
- * 03 About
- * 04 Capabilities
- * 05 Projects
- * 06 Industries
- * 07 Why Leader Gate
- * 08 Process
- * 09 Experience / Proof
- * 10 Final CTA
+ * 03 About + Capabilities
+ * 04 Projects
+ * 05 Industries
+ * 06 Why Leader Gate
+ * 07 Process
+ * 08 Experience / Proof
+ * 09 Final CTA
  */
 export default function HomePage() {
   return (
@@ -37,7 +35,6 @@ export default function HomePage() {
         <HeroSection />
         <TrustedClientsSection />
         <AboutSection />
-        <CapabilitiesSection />
         <ProjectsSection />
         <IndustriesSection />
         <WhyLeaderGateSection />

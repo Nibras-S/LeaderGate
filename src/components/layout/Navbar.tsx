@@ -23,9 +23,14 @@ const menuItems = [
  * - Hamburger at far right (px-6 sm:px-10 lg:px-14)
  * - Overlay menu maintains exact same logo and close icon coordinates (zero shift)
  */
-export function Navbar() {
+type NavbarProps = {
+  appearance?: "dark" | "light";
+};
+
+export function Navbar({ appearance = "dark" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isLight = appearance === "light" && !scrolled;
 
   // Track scroll position for header background transition
   useEffect(() => {
@@ -65,7 +70,9 @@ export function Navbar() {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
             ? "bg-[#0F0F0D]/90 backdrop-blur-md border-b border-white/10 shadow-lg py-4"
-            : "bg-gradient-to-b from-black/60 via-black/15 to-transparent py-5 sm:py-7"
+            : appearance === "light"
+              ? "bg-[#F9F8F5]/90 backdrop-blur-md border-b border-[#1A1A18]/[0.06] py-5 sm:py-6"
+              : "bg-gradient-to-b from-black/60 via-black/15 to-transparent py-5 sm:py-7"
         }`}
       >
         <div className="w-full px-6 sm:px-10 lg:px-14 flex items-center justify-between">
@@ -76,7 +83,11 @@ export function Navbar() {
             aria-label="Leader Gate Advertising Home"
           >
             <Image
-              src="/leadergate-logo-white.webp"
+              src={
+                isLight
+                  ? "/leadergate-logo.webp"
+                  : "/leadergate-logo-white.webp"
+              }
               alt="Leader Gate Advertising"
               width={180}
               height={56}
@@ -85,17 +96,29 @@ export function Navbar() {
             />
           </Link>
 
+          {appearance === "light" && (
+            <p
+              className={`absolute left-1/2 hidden -translate-x-1/2 text-[0.625rem] font-semibold uppercase tracking-[0.38em] lg:block ${
+                isLight ? "text-[#1A1A18]/70" : "text-white/70"
+              }`}
+            >
+              Design&nbsp;&nbsp;/&nbsp;&nbsp;Fabricate&nbsp;&nbsp;/&nbsp;&nbsp;Install
+            </p>
+          )}
+
           {/* Hamburger — Far right (clean 3 lines like reference) */}
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open navigation menu"
             aria-expanded={menuOpen}
-            className="p-2 -mr-2 text-white hover:opacity-75 transition-opacity cursor-pointer flex flex-col justify-center items-end gap-[5px] sm:gap-[6px] w-10 h-10"
+            className={`p-2 -mr-2 hover:opacity-75 transition-opacity cursor-pointer flex flex-col justify-center items-end gap-[5px] sm:gap-[6px] w-10 h-10 ${
+              isLight ? "text-[#1A1A18]" : "text-white"
+            }`}
           >
-            <span className="h-[2px] w-6 sm:w-7 bg-white rounded-full transition-transform" />
-            <span className="h-[2px] w-6 sm:w-7 bg-white rounded-full transition-transform" />
-            <span className="h-[2px] w-6 sm:w-7 bg-white rounded-full transition-transform" />
+            <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
+            <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
+            <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
           </button>
         </div>
       </header>
