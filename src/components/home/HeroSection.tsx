@@ -64,9 +64,9 @@ export function HeroSection() {
             Premium Signage • Branding • Fabrication
           </p>
 
-          {/* Heading — Clean white, title case, refined Medium weight (500) */}
-          {/* Mobile: exactly 2 lines. Desktop: 3 lines */}
-          <h1 className="text-[1.34rem] leading-[1.24] sm:text-4xl md:text-5xl lg:text-[4.25rem] xl:text-[4.75rem] lg:leading-[1.08] font-medium tracking-[-0.02em] text-white">
+          {/* Heading — Clean white, title case, refined balance on desktop */}
+          {/* Mobile: exactly 2 lines (weight 500). Desktop: 3 lines slightly reduced */}
+          <h1 className="text-[1.34rem] leading-[1.24] sm:text-4xl md:text-5xl lg:text-[3.35rem] xl:text-[3.75rem] lg:leading-[1.12] font-medium lg:font-normal tracking-[-0.02em] text-white">
             <span className="lg:hidden">
               Building Brands <br />
               Through Exceptional Signage
