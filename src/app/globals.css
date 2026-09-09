@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   LEADER GATE — DESIGN TOKENS
+   Extracted from brand logo & brief
+───────────────────────────────────────────── */
+:root {
+  /* BRAND COLORS */
+  --color-orange: #F26522;
+  --color-orange-hover: #DC5510;
+  --color-orange-light: #FEF0E8;
+  --color-orange-mid: #FCA46A;
+
+  /* Logo gradient — logo mark & occasional brand moments ONLY */
+  --gradient-brand: linear-gradient(135deg, #F7941D 0%, #F15A22 45%, #C1175A 100%);
+
+  /* INK / DARKS */
+  --color-ink: #0F0F0D;
+  --color-ink-80: #1C1C1A;
+  --color-ink-60: #3A3A38;
+
+  /* SURFACE / BACKGROUNDS */
+  --color-surface: #F9F8F5;
+  --color-surface-alt: #F2F1ED;
+  --color-surface-dark: #0F0F0D;
+
+  /* BORDERS */
+  --color-border: #E3E2DC;
+  --color-border-strong: #C8C7C0;
+
+  /* TEXT */
+  --color-text-primary: #1A1A18;
+  --color-text-body: #3D3D3A;
+  --color-text-muted: #7A7972;
+  --color-text-invert: #F9F8F5;
+
+  /* LAYOUT */
+  --max-width: 1280px;
+  --section-padding-y: 6rem;    /* py-24 */
+  --section-padding-x: 1.5rem;  /* px-6 mobile */
+
+  /* RADIUS */
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-sm: 6px;
+}
+
+/* ─────────────────────────────────────────────
+   TAILWIND v4 THEME REGISTRATION
+   Makes tokens available as Tailwind utilities
+───────────────────────────────────────────── */
+@theme inline {
+  --color-orange: var(--color-orange);
+  --color-orange-hover: var(--color-orange-hover);
+  --color-orange-light: var(--color-orange-light);
+  --color-ink: var(--color-ink);
+  --color-ink-80: var(--color-ink-80);
+  --color-ink-60: var(--color-ink-60);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-surface-dark: var(--color-surface-dark);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-body: var(--color-text-body);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-invert: var(--color-text-invert);
+
+  /* Font family — set via layout.tsx via next/font */
+  --font-sans: var(--font-dm-sans);
+}
+
+/* ─────────────────────────────────────────────
+   BASE / RESET
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-body);
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY SCALE
+───────────────────────────────────────────── */
+.text-display {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.text-h2 {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+}
+
+.text-h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+}
+
+.text-h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+.text-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+
+/* ─────────────────────────────────────────────
+   LAYOUT UTILITIES
+───────────────────────────────────────────── */
+.container-page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BUTTON SYSTEM
+───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--radius-button);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary — Orange */
+.btn-primary {
+  background-color: var(--color-orange);
+  color: #ffffff;
+  border-color: var(--color-orange);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-orange-hover);
+  border-color: var(--color-orange-hover);
+  transform: translateY(-1px);
+}
+
+/* Secondary — Ink/Black */
+.btn-secondary {
+  background-color: var(--color-ink);
+  color: var(--color-text-invert);
+  border-color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-ink-80);
+  border-color: var(--color-ink-80);
+  transform: translateY(-1px);
+}
+
+/* Outline — for tertiary actions */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-border-strong);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-1px);
+}
+
+/* Ghost inverted — for dark sections */
+.btn-ghost-invert {
+  background-color: transparent;
+  color: var(--color-text-invert);
+  border-color: rgba(249, 248, 245, 0.4);
+}
+
+.btn-ghost-invert:hover {
+  border-color: var(--color-text-invert);
+  background-color: rgba(249, 248, 245, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────────
+   CARD SYSTEM
+───────────────────────────────────────────── */
+.card {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.card-surface {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION DIVIDER
+───────────────────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─────────────────────────────────────────────
+   FOOTER LINK HOVER (pure CSS — no JS events)
+───────────────────────────────────────────── */
+.footer-link {
+  color: rgba(249, 248, 245, 0.65);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: rgba(249, 248, 245, 1);
+}
+
