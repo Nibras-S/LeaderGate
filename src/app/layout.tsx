@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { dmSans } from "@/lib/fonts";
+import { dmSans, manrope, inter } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Leader Gate Advertising — Premium Signage, Branding & Fabrication UAE",
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html lang="en" className={`${dmSans.variable} ${manrope.variable} ${inter.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
