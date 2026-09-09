@@ -1,7 +1,4 @@
-"use client";
-
-import { useRef, useEffect } from "react";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { inter } from "@/lib/fonts";
 
@@ -18,37 +15,35 @@ import { inter } from "@/lib/fonts";
  * - Supporting text: light, elegant weight
  * - Primary CTA: White rounded pill "View Our Projects →"
  * - Secondary CTA: Clean text link "Request a Consultation →" (no border, no outline, no orange)
- * - Minimal centered "SCROLL" indicator at bottom
  */
 export function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay policy
-      });
-    }
-  }, []);
-
   return (
     <section
       id="hero"
-      className={`relative w-full h-[100dvh] min-h-[660px] flex flex-col justify-end lg:justify-center pb-24 sm:pb-28 lg:pb-10 lg:pt-14 overflow-hidden bg-[#0A0A09] ${inter.className}`}
+      className={`relative flex h-[100svh] min-h-[600px] w-full flex-col justify-end overflow-hidden bg-[#0A0A09] pb-20 sm:pb-24 lg:h-[100dvh] lg:min-h-[660px] lg:justify-center lg:pb-10 lg:pt-14 ${inter.className}`}
     >
       {/* Background Video — Cinematic & Clearly Visible */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           poster="/hero-poster.jpg"
-          preload="auto"
-          className="w-full h-full object-cover object-center scale-[1.01]"
+          preload="metadata"
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center"
         >
-          <source src="/herosection.mp4" type="video/mp4" />
+          <source
+            src="/herosection-mobile.mp4"
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          <source
+            src="/herosection-optimized.mp4"
+            type="video/mp4"
+            media="(min-width: 768px)"
+          />
         </video>
 
         {/* Directional scrim: darkens text zone on left, keeps video clear & dramatic on right */}
@@ -113,21 +108,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Minimalist Centered Scroll Indicator (Matching Reference) */}
-      <div className="absolute bottom-5 left-0 right-0 z-10 flex justify-center pointer-events-none">
-        <a
-          href="#clients"
-          className="pointer-events-auto group flex flex-col items-center gap-1.5 text-white/50 hover:text-white transition-colors cursor-pointer"
-          aria-label="Scroll to content"
-        >
-          <span className="text-[0.625rem] font-medium uppercase tracking-[0.25em]">
-            Scroll
-          </span>
-          <div className="w-[1px] h-5 bg-white/30 overflow-hidden relative">
-            <div className="w-full h-1/2 bg-white animate-bounce" />
-          </div>
-        </a>
-      </div>
     </section>
   );
 }

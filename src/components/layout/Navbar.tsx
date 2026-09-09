@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
@@ -30,16 +30,20 @@ type NavbarProps = {
 export function Navbar({ appearance = "dark" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const scrollSentinelRef = useRef<HTMLSpanElement>(null);
   const isLight = appearance === "light" && !scrolled;
 
-  // Track scroll position for header background transition
+  // Observe a single threshold instead of doing work on every scroll event.
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const sentinel = scrollSentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setScrolled(!entry.isIntersecting);
+    });
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   // Lock body scroll when menu is open
@@ -65,6 +69,11 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
 
   return (
     <>
+      <span
+        ref={scrollSentinelRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-[60px] h-px w-px"
+      />
       {/* Fixed Header — Full-width edge-to-edge layout matching reference */}
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${

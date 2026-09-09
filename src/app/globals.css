@@ -83,6 +83,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 section[id] {
@@ -94,6 +96,19 @@ body {
   color: var(--color-text-body);
   font-family: var(--font-sans), sans-serif;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee {
+    animation: none;
+    transform: none;
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -329,4 +344,3 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-

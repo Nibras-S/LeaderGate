@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Container } from "@/components/ui/Container";
 
 interface Client {
   name: string;
