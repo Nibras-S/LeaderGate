@@ -1,100 +1,125 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 
-interface ClientLogo {
+interface Client {
   name: string;
   src: string;
   alt: string;
-  className?: string;
+  desktopClass: string;
+  mobileClass: string;
 }
 
-const row1Clients: ClientLogo[] = [
+const clients: Client[] = [
   {
     name: "Emirates NBD",
     src: "/clients/emirates-nbd.png",
     alt: "Emirates NBD Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[140px] sm:max-w-[170px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[180px] lg:max-w-[210px]",
+    mobileClass: "max-h-7 max-w-[125px]",
   },
   {
     name: "Citibank",
     src: "/clients/citibank.png",
     alt: "Citibank Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[100px] sm:max-w-[125px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[140px] lg:max-w-[165px]",
+    mobileClass: "max-h-7 max-w-[95px]",
   },
   {
     name: "Bank of Baroda",
     src: "/clients/bank-of-baroda.png",
     alt: "Bank of Baroda Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[130px] sm:max-w-[160px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[170px] lg:max-w-[200px]",
+    mobileClass: "max-h-6 max-w-[125px]",
   },
   {
     name: "ADNOC",
     src: "/clients/adnoc.png",
     alt: "ADNOC Logo",
-    className: "h-7 sm:h-8 md:h-9 max-w-[105px] sm:max-w-[130px]",
+    desktopClass: "h-9 md:h-10 lg:h-11 max-w-[140px] lg:max-w-[165px]",
+    mobileClass: "max-h-8 max-w-[95px]",
   },
   {
     name: "Abu Dhabi Police",
     src: "/clients/abu-dhabi-police.png",
     alt: "Abu Dhabi Police Logo",
-    className: "h-7 sm:h-8 md:h-9 max-w-[135px] sm:max-w-[165px]",
+    desktopClass: "h-9 md:h-10 lg:h-11 max-w-[160px] lg:max-w-[190px]",
+    mobileClass: "max-h-8 max-w-[115px]",
   },
   {
     name: "ALDAR",
     src: "/clients/aldar.png",
     alt: "ALDAR Logo",
-    className: "h-7 sm:h-8 md:h-9 max-w-[60px] sm:max-w-[75px]",
+    desktopClass: "h-9 md:h-10 lg:h-11 max-w-[80px] lg:max-w-[95px]",
+    mobileClass: "max-h-8 max-w-[55px]",
   },
   {
     name: "SOBHA REALTY",
     src: "/clients/sobha-realty.png",
     alt: "SOBHA Realty Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[110px] sm:max-w-[135px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[145px] lg:max-w-[175px]",
+    mobileClass: "max-h-6 max-w-[100px]",
   },
-];
-
-const row2Clients: ClientLogo[] = [
   {
     name: "LuLu",
     src: "/clients/lulu.png",
     alt: "LuLu Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[110px] sm:max-w-[135px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[145px] lg:max-w-[175px]",
+    mobileClass: "max-h-7 max-w-[100px]",
   },
   {
     name: "KHIDMAH",
     src: "/clients/khidmah.png",
     alt: "KHIDMAH Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[115px] sm:max-w-[140px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[150px] lg:max-w-[180px]",
+    mobileClass: "max-h-6 max-w-[105px]",
   },
   {
     name: "OMODA | JAECOO",
     src: "/clients/omoda-jaecoo.png",
     alt: "OMODA JAECOO Logo",
-    className: "h-4 sm:h-5 md:h-[1.45rem] max-w-[150px] sm:max-w-[190px]",
+    desktopClass: "h-6 md:h-7 lg:h-8 max-w-[200px] lg:max-w-[240px]",
+    mobileClass: "max-h-4 max-w-[145px]",
   },
   {
     name: "Mahy Khoory Automotive",
     src: "/clients/mahy-khoory.png",
     alt: "Mahy Khoory Automotive Logo",
-    className: "h-6 sm:h-7 md:h-8 max-w-[130px] sm:max-w-[160px]",
+    desktopClass: "h-8 md:h-9 lg:h-10 max-w-[165px] lg:max-w-[195px]",
+    mobileClass: "max-h-6 max-w-[120px]",
   },
   {
     name: "DEWA",
     src: "/clients/dewa.png",
     alt: "DEWA Logo",
-    className: "h-7 sm:h-8 md:h-9 max-w-[95px] sm:max-w-[120px]",
+    desktopClass: "h-9 md:h-10 lg:h-11 max-w-[130px] lg:max-w-[155px]",
+    mobileClass: "max-h-8 max-w-[90px]",
   },
+];
+
+// Mobile pairs matching reference image media_1788959362760.png:
+// Row 1: Emirates NBD | citibank
+// Row 2: Bank of Baroda | ADNOC
+// Row 3: Abu Dhabi Police | ALDAR
+// Row 4: SOBHA REALTY | LuLu
+// Row 5: KHIDMAH | OMODA | JAECOO
+// Row 6: Mahy Khoory Automotive | DEWA
+const mobilePairs: [Client, Client][] = [
+  [clients[0], clients[1]],
+  [clients[2], clients[3]],
+  [clients[4], clients[5]],
+  [clients[6], clients[7]],
+  [clients[8], clients[9]],
+  [clients[10], clients[11]],
 ];
 
 /**
  * TRUSTED CLIENTS SECTION — 02
  *
- * Implements reference design:
- * - Warm off-white background (#F4F3F0) with subtle borders
- * - Refined eyebrow: "TRUSTED BY INDUSTRY LEADERS"
- * - 2-row balanced desktop presentation of all 12 key UAE/Global clients
- * - Clean responsive multi-row wrap for mobile/tablet with optical height balance
- * - Monochrome dark charcoal logos with subtle hover feedback
+ * Implements reference designs:
+ * - Desktop: Full-width single continuous row horizontal scrolling marquee across almost full viewport width
+ *   (increased scale, generous 5vw side fade, large gaps between logos)
+ * - Mobile: 2-column divided grid with subtle 1px internal divider lines (exact match to media_1788959362760.png)
+ * - Palette: Warm off-white background (#F4F3F0) with dark charcoal monochrome client logos
  */
 export function TrustedClientsSection() {
   return (
@@ -102,53 +127,82 @@ export function TrustedClientsSection() {
       id="clients"
       className="relative w-full bg-[#F4F3F0] py-14 sm:py-16 md:py-20 border-y border-[#E5E3DC] overflow-hidden"
     >
-      <Container>
-        {/* Eyebrow / Section Title matching reference */}
+      {/* Eyebrow / Section Title matching reference */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-[0.6875rem] sm:text-xs font-medium uppercase tracking-[0.22em] text-[#7A7972] mb-9 sm:mb-12">
           Trusted by Industry Leaders
         </p>
+      </div>
 
-        {/* Desktop 2-row layout / Responsive flex */}
-        <div className="flex flex-col items-center gap-7 sm:gap-9 md:gap-11">
-          {/* Row 1: 7 Clients */}
-          <div className="w-full flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 md:gap-x-12 lg:gap-x-14 xl:gap-x-16 gap-y-6 sm:gap-y-7">
-            {row1Clients.map((client) => (
-              <div
-                key={client.name}
-                className="flex items-center justify-center transition-transform duration-200 hover:scale-105"
-                title={client.name}
-              >
-                <Image
-                  src={client.src}
-                  alt={client.alt}
-                  width={240}
-                  height={80}
-                  className={`w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 ${client.className}`}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2: 5 Clients */}
-          <div className="w-full flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 md:gap-x-12 lg:gap-x-14 xl:gap-x-16 gap-y-6 sm:gap-y-7">
-            {row2Clients.map((client) => (
-              <div
-                key={client.name}
-                className="flex items-center justify-center transition-transform duration-200 hover:scale-105"
-                title={client.name}
-              >
-                <Image
-                  src={client.src}
-                  alt={client.alt}
-                  width={240}
-                  height={80}
-                  className={`w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 ${client.className}`}
-                />
-              </div>
-            ))}
-          </div>
+      {/* ──────────────────────────────────────────────────────────
+          DESKTOP & TABLET: Full-Width Single-Row Horizontal Infinite Marquee
+          - Uses full available viewport width
+          - Increased logo scale and generous proportional spacing
+          - Subtle 5vw side fade mask (no large blank areas)
+      ────────────────────────────────────────────────────────── */}
+      <div className="hidden md:block relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5vw,black_calc(100%-5vw),transparent)]">
+        <div className="animate-marquee flex items-center gap-16 md:gap-20 lg:gap-24 xl:gap-28 py-3">
+          {[...clients, ...clients].map((client, idx) => (
+            <div
+              key={`${client.name}-${idx}`}
+              className="flex-shrink-0 flex items-center justify-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+              title={client.name}
+            >
+              <Image
+                src={client.src}
+                alt={client.alt}
+                width={260}
+                height={90}
+                className={`w-auto object-contain opacity-85 hover:opacity-100 transition-opacity duration-200 ${client.desktopClass}`}
+              />
+            </div>
+          ))}
         </div>
-      </Container>
+      </div>
+
+      {/* ──────────────────────────────────────────────────────────
+          MOBILE: 2-Column Divided Grid (Exact match to reference)
+      ────────────────────────────────────────────────────────── */}
+      <div className="block md:hidden max-w-sm mx-auto px-4">
+        <div className="grid grid-cols-2">
+          {mobilePairs.map((pair, rowIdx) => {
+            const isLastRow = rowIdx === mobilePairs.length - 1;
+            return (
+              <div key={rowIdx} className="contents">
+                {/* Left Column Item */}
+                <div
+                  className={`flex items-center justify-center px-4 py-5 h-20 sm:h-24 border-r border-[#E2DFD7] ${
+                    !isLastRow ? "border-b border-[#E2DFD7]" : ""
+                  }`}
+                >
+                  <Image
+                    src={pair[0].src}
+                    alt={pair[0].alt}
+                    width={180}
+                    height={60}
+                    className={`w-auto object-contain opacity-85 ${pair[0].mobileClass}`}
+                  />
+                </div>
+
+                {/* Right Column Item */}
+                <div
+                  className={`flex items-center justify-center px-4 py-5 h-20 sm:h-24 ${
+                    !isLastRow ? "border-b border-[#E2DFD7]" : ""
+                  }`}
+                >
+                  <Image
+                    src={pair[1].src}
+                    alt={pair[1].alt}
+                    width={180}
+                    height={60}
+                    className={`w-auto object-contain opacity-85 ${pair[1].mobileClass}`}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }
