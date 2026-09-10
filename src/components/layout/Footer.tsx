@@ -34,14 +34,16 @@ const footerLinks = [
  * Footer — dark ink background, logo, nav groups, tagline.
  * TODO (refinement phase): add social links, UAE address, phone/email, certifications badge.
  */
-export function Footer() {
+export function Footer({ appearance = "dark" }: { appearance?: "dark" | "light" }) {
   const currentYear = new Date().getFullYear();
+  const isLight = appearance === "light";
 
   return (
     <footer
+      data-appearance={appearance}
       style={{
-        backgroundColor: "var(--color-ink)",
-        color: "var(--color-text-invert)",
+        backgroundColor: isLight ? "#F9F8F5" : "var(--color-ink)",
+        color: isLight ? "#1A1A18" : "var(--color-text-invert)",
         paddingTop: "5rem",
         paddingBottom: "2.5rem",
       }}
@@ -53,7 +55,7 @@ export function Footer() {
             display: "grid",
             gap: "3rem",
             paddingBottom: "3rem",
-            borderBottom: "1px solid rgba(249,248,245,0.1)",
+            borderBottom: isLight ? "1px solid #DCDDD6" : "1px solid rgba(249,248,245,0.1)",
           }}
           className="grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr]"
         >
@@ -65,14 +67,14 @@ export function Footer() {
                 alt="Leader Gate Advertising"
                 width={150}
                 height={45}
-                style={{ height: "38px", width: "auto", filter: "brightness(0) invert(1)" }}
+                style={{ height: "38px", width: "auto", filter: isLight ? undefined : "brightness(0) invert(1)" }}
               />
             </Link>
             <p
               style={{
                 marginTop: "1.25rem",
                 fontSize: "0.9375rem",
-                color: "rgba(249,248,245,0.6)",
+                color: isLight ? "#626760" : "rgba(249,248,245,0.6)",
                 lineHeight: 1.7,
                 maxWidth: "28ch",
               }}
@@ -90,7 +92,7 @@ export function Footer() {
                   fontWeight: 600,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "rgba(249,248,245,0.45)",
+                  color: isLight ? "#626760" : "rgba(249,248,245,0.45)",
                   marginBottom: "1rem",
                 }}
               >
@@ -137,12 +139,12 @@ export function Footer() {
               fontSize: "0.875rem",
               fontWeight: 600,
               letterSpacing: "0.06em",
-              color: "var(--color-orange)",
+              color: isLight ? "#B74716" : "var(--color-orange)",
             }}
           >
             Design. Fabricate. Install. Elevate.
           </p>
-          <p style={{ fontSize: "0.8125rem", color: "rgba(249,248,245,0.4)" }}>
+          <p style={{ fontSize: "0.8125rem", color: isLight ? "#626760" : "rgba(249,248,245,0.4)" }}>
             © {currentYear} Leader Gate Advertising. All rights reserved.
           </p>
         </div>

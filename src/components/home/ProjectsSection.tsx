@@ -57,33 +57,32 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className={`relative overflow-hidden bg-[#11110F] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
+      className={`relative overflow-hidden bg-[#F9F8F5] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:5rem_100%]" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
-        <div className="grid gap-8 border-t border-white/15 pt-8 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <div className="grid gap-8 border-t border-[#DCDDD6] pt-8 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-7">
-            <p className="mb-5 flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#F26522]">
+            <p className="mb-5 flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#B74716]">
               <span className="h-px w-9 bg-[#F26522]" />
               Selected work
             </p>
-            <h2 className="max-w-[12ch] text-[clamp(2.8rem,5vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.055em] text-white text-balance">
+            <h2 className="max-w-[12ch] text-[clamp(2.8rem,5vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.055em] text-[#1A1A18] text-balance">
               Built to be seen.
-              <span className="block font-light text-white/55">
+              <span className="block font-normal text-[#626760]">
                 Made to be remembered.
               </span>
             </h2>
           </div>
 
           <div className="lg:col-span-5 lg:pb-1">
-            <p className="max-w-[34rem] text-base font-light leading-relaxed text-white/65 sm:text-lg">
+            <p className="max-w-[34rem] text-base font-normal leading-relaxed text-[#626760] sm:text-lg">
               Across retail, finance, hospitality, automotive, and real estate,
               each project turns a brand into a physical place people recognize.
             </p>
             <Link
               href="#project-grid"
-              className="mt-7 inline-flex min-h-12 items-center border-b border-white/35 text-sm font-semibold text-white transition-colors duration-200 hover:border-[#F26522] hover:text-[#F26522] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"
+              className="mt-7 inline-flex min-h-12 items-center border-b border-[#DCDDD6] text-sm font-semibold text-[#1A1A18] transition-colors duration-200 hover:border-[#F26522] hover:text-[#B74716] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"
             >
               Explore all projects
             </Link>
@@ -128,14 +127,14 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 border-t border-white/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-xl text-sm leading-relaxed text-white/50">
+        <div className="mt-12 flex flex-col gap-6 border-t border-[#DCDDD6] pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm leading-relaxed text-[#626760]">
             Have a site, rollout, or signage package in mind? Bring us the brief;
             our team will take it from survey to installation.
           </p>
           <Link
             href="#contact"
-            className="inline-flex min-h-14 w-fit items-center rounded-full bg-[#F26522] px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-200 hover:bg-[#DC5510] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"
+            className="inline-flex min-h-14 w-fit items-center rounded-full bg-[#C44913] px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-200 hover:bg-[#DC5510] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"
           >
             Start your project
           </Link>

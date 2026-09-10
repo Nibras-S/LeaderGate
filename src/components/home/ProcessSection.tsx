@@ -37,18 +37,17 @@ export function ProcessSection() {
   return (
     <section
       id="process"
-      className={`relative overflow-hidden bg-[#121210] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
+      className={`relative overflow-hidden bg-[#F3F0E9] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:5rem_100%]" />
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="max-w-4xl">
-          <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#F26522]">
+          <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#B74716]">
             How we work
           </p>
-          <h2 className="max-w-[15ch] text-[clamp(2.65rem,5vw,5rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+          <h2 className="max-w-[15ch] text-[clamp(2.65rem,5vw,5rem)] font-medium leading-[0.96] tracking-[-0.05em] text-[#1A1A18] text-balance">
             Clear from first survey to final handover.
           </h2>
-          <p className="mt-6 max-w-[42rem] text-base font-light leading-relaxed text-white/60 sm:text-lg">
+          <p className="mt-6 max-w-[42rem] text-base font-normal leading-relaxed text-[#626760] sm:text-lg">
             One structured workflow keeps design decisions, production, site
             access, and delivery moving together.
           </p>
@@ -58,18 +57,18 @@ export function ProcessSection() {
           {steps.map((step, index) => (
             <li
               key={step.number}
-              className={`relative border-t border-white/15 py-8 sm:min-h-[21rem] sm:px-6 lg:px-7 ${
+              className={`relative border-t border-[#DCDDD6] py-8 sm:min-h-[21rem] sm:px-6 lg:px-7 ${
                 index > 0 ? "lg:border-l" : "lg:pl-0"
               }`}
             >
-              <span className="block text-5xl font-light tracking-[-0.06em] text-white/12 tabular-nums sm:text-6xl">
+              <span className="block text-5xl font-normal tracking-[-0.06em] text-[#626760] tabular-nums sm:text-6xl">
                 {step.number}
               </span>
               <div className="mt-16 sm:mt-20">
-                <h3 className="text-xl font-medium tracking-[-0.03em] text-white sm:text-2xl">
+                <h3 className="text-xl font-medium tracking-[-0.03em] text-[#1A1A18] sm:text-2xl">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm font-light leading-relaxed text-white/52">
+                <p className="mt-3 text-sm font-normal leading-relaxed text-[#626760]">
                   {step.description}
                 </p>
               </div>

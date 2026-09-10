@@ -42,7 +42,7 @@ export default function HomePage() {
         <ExperienceSection />
         <FinalCTASection />
       </main>
-      <Footer />
+      <Footer appearance="light" />
     </>
   );
 }

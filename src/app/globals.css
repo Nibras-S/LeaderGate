@@ -335,6 +335,14 @@ body {
   color: rgba(249, 248, 245, 1);
 }
 
+footer[data-appearance="light"] .footer-link {
+  color: #51564F;
+}
+
+footer[data-appearance="light"] .footer-link:hover {
+  color: #B74716;
+}
+
 /* ─────────────────────────────────────────────
    CLIENT LOGOS HORIZONTAL MARQUEE
 ───────────────────────────────────────────── */

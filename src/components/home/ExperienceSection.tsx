@@ -12,7 +12,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className={`bg-[#191915] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
+      className={`bg-[#F9F8F5] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
     >
       <div className="mx-auto grid max-w-[1440px] gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:items-stretch lg:gap-16 lg:px-14">
         <div className="relative min-h-[28rem] overflow-hidden rounded-2xl bg-[#262620] lg:col-span-7 lg:min-h-[42rem]">
@@ -34,27 +34,27 @@ export function ExperienceSection() {
 
         <div className="flex flex-col justify-between lg:col-span-5 lg:py-2">
           <div>
-            <h2 className="max-w-[12ch] text-[clamp(2.65rem,4.6vw,4.75rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+            <h2 className="max-w-[12ch] text-[clamp(2.65rem,4.6vw,4.75rem)] font-medium leading-[0.96] tracking-[-0.05em] text-[#1A1A18] text-balance">
               Experience you can measure. Quality you can see.
             </h2>
-            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-white/58 sm:text-lg">
+            <p className="mt-6 max-w-md text-base font-normal leading-relaxed text-[#626760] sm:text-lg">
               Our reputation comes from completed work, repeat clients, and a
               consistent standard from the first drawing to the final fixing.
             </p>
           </div>
 
-          <dl className="mt-12 grid grid-cols-2 border-t border-white/15 lg:mt-16">
+          <dl className="mt-12 grid grid-cols-2 border-t border-[#DCDDD6] lg:mt-16">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className={`min-h-36 py-6 ${
-                  index % 2 === 0 ? "pr-5" : "border-l border-white/15 pl-5"
-                } ${index > 1 ? "border-t border-white/15" : ""}`}
+                  index % 2 === 0 ? "pr-5" : "border-l border-[#DCDDD6] pl-5"
+                } ${index > 1 ? "border-t border-[#DCDDD6]" : ""}`}
               >
-                <dt className="text-4xl font-medium tracking-[-0.06em] text-[#F26522] tabular-nums sm:text-5xl">
+                <dt className="text-4xl font-medium tracking-[-0.06em] text-[#B74716] tabular-nums sm:text-5xl">
                   {stat.number}
                 </dt>
-                <dd className="mt-2 max-w-32 text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-white/45">
+                <dd className="mt-2 max-w-32 text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-[#626760]">
                   {stat.label}
                 </dd>
               </div>

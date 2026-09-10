@@ -27,17 +27,17 @@ export function IndustriesSection() {
   return (
     <section
       id="industries"
-      className={`relative overflow-hidden bg-[#161613] py-24 text-white sm:py-28 lg:py-36 ${inter.className}`}
+      className={`relative overflow-hidden bg-[#F0F2ED] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="max-w-4xl">
-          <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#F26522]">
+          <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[#B74716]">
             Industries
           </p>
-          <h2 className="max-w-[16ch] text-[clamp(2.65rem,5vw,5rem)] font-medium leading-[0.96] tracking-[-0.05em] text-white text-balance">
+          <h2 className="max-w-[16ch] text-[clamp(2.65rem,5vw,5rem)] font-medium leading-[0.96] tracking-[-0.05em] text-[#1A1A18] text-balance">
             One production partner. Every kind of place.
           </h2>
-          <p className="mt-6 max-w-[42rem] text-base font-light leading-relaxed text-white/60 sm:text-lg">
+          <p className="mt-6 max-w-[42rem] text-base font-normal leading-relaxed text-[#626760] sm:text-lg">
             We adapt materials, visibility, compliance, and installation planning
             to the demands of each environment.
           </p>
@@ -51,7 +51,7 @@ export function IndustriesSection() {
             return (
               <article
                 key={industry.label}
-                className={`group flex min-h-44 flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-1 hover:border-[#F26522]/45 hover:bg-white/[0.06] motion-reduce:transform-none ${
+                className={`group flex min-h-44 flex-col justify-between rounded-2xl border border-[#DCDDD6] bg-[#FCFCFA] p-6 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-1 hover:border-[#F26522]/45 hover:bg-[#FFF4EA] motion-reduce:transform-none ${
                   isWide ? "lg:col-span-6" : "lg:col-span-3"
                 }`}
               >
@@ -59,14 +59,14 @@ export function IndustriesSection() {
                   <Icon
                     size={27}
                     weight="light"
-                    className="text-[#F26522]"
+                    className="text-[#B74716]"
                     aria-hidden="true"
                   />
-                  <span className="text-xs font-medium tabular-nums text-white/25">
+                  <span className="text-xs font-medium tabular-nums text-[#626760]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="max-w-[20rem] text-lg font-medium leading-tight tracking-[-0.025em] text-white sm:text-xl">
+                <h3 className="max-w-[20rem] text-lg font-medium leading-tight tracking-[-0.025em] text-[#1A1A18] sm:text-xl">
                   {industry.label}
                 </h3>
               </article>
