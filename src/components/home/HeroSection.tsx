@@ -1,6 +1,7 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { inter } from "@/lib/fonts";
+import { ResponsiveHeroVideo } from "@/components/home/ResponsiveHeroVideo";
 
 /**
  * HERO SECTION — 01 (Refined Editorial Style)
@@ -24,27 +25,7 @@ export function HeroSection() {
     >
       {/* Background Video — Cinematic & Clearly Visible */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/hero-poster.jpg"
-          preload="metadata"
-          aria-hidden="true"
-          className="h-full w-full object-cover object-center"
-        >
-          <source
-            src="/herosection-mobile.mp4"
-            type="video/mp4"
-            media="(max-width: 767px)"
-          />
-          <source
-            src="/herosection-optimized.mp4"
-            type="video/mp4"
-            media="(min-width: 768px)"
-          />
-        </video>
+        <ResponsiveHeroVideo />
 
         {/* Directional scrim: darkens text zone on left, keeps video clear & dramatic on right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 55% to-transparent pointer-events-none" />
