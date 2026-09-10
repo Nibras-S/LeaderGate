@@ -4,7 +4,6 @@ import {
   Cpu,
   Wrench,
 } from "@phosphor-icons/react/dist/ssr";
-import { inter } from "@/lib/fonts";
 
 const reasons = [
   {
@@ -37,7 +36,7 @@ export function WhyLeaderGateSection() {
   return (
     <section
       id="why-us"
-      className={`bg-[#F9F8F5] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
+      className="bg-[#F9F8F5] py-24 text-[#1A1A18] sm:py-28 lg:py-36"
     >
       <div className="mx-auto grid max-w-[1440px] gap-14 px-6 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:px-14">
         <div className="lg:col-span-5">

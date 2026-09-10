@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { inter } from "@/lib/fonts";
 
 const stats = [
   { number: "500+", label: "Projects delivered" },
@@ -10,7 +9,7 @@ const stats = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className={`bg-[#F9F8F5] pb-20 pt-4 text-[#1A1A18] sm:pb-28 lg:pb-36 ${inter.className}`}>
+    <section id="experience" className="bg-[#F9F8F5] pb-20 pt-4 text-[#1A1A18] sm:pb-28 lg:pb-36">
       <div className="homepage-shell">
         <div id="why-us" className="grid scroll-mt-24 items-center gap-10 border-t border-[#DCDDD6] pt-16 lg:grid-cols-2 lg:gap-20 lg:pt-24">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#E3E1DA]">

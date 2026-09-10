@@ -8,7 +8,6 @@ import {
   ArrowUpRight,
   CheckCircle,
 } from "@phosphor-icons/react/dist/ssr";
-import { inter } from "@/lib/fonts";
 import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
@@ -99,7 +98,7 @@ const lifecycleSteps = [
 
 export default function AboutPage() {
   return (
-    <div className={`min-h-screen bg-[#F9F8F5] text-[#1A1A18] ${inter.className}`}>
+    <div className="min-h-screen bg-[#F9F8F5] text-[#1A1A18]">
       <Navbar />
 
       <main id="main-content">

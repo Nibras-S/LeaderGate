@@ -1,4 +1,5 @@
-import { inter } from "@/lib/fonts";
+import Image from "next/image";
+import Link from "next/link";
 
 const steps = [
   {
@@ -37,7 +38,7 @@ export function ProcessSection() {
   return (
     <section
       id="process"
-      className={`relative overflow-hidden bg-[#F3F0E9] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
+      className="relative overflow-hidden bg-[#F3F0E9] py-24 text-[#1A1A18] sm:py-28 lg:py-36"
     >
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="max-w-4xl">

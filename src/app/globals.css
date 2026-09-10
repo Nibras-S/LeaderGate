@@ -1,3 +1,4 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap");
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────
@@ -66,14 +67,14 @@
   --color-text-muted: var(--color-text-muted);
   --color-text-invert: var(--color-text-invert);
 
-  /* Font family — set via layout.tsx via next/font */
-  --font-sans: var(--font-dm-sans);
-  --font-manrope: var(--font-manrope);
-  --font-inter: var(--font-inter);
+  /* Font families — Matching Empereal website: Satoshi (sans) & Clash Display (headings) */
+  --font-sans: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Clash Display", "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 /* ─────────────────────────────────────────────
-   BASE / RESET
+   BASE / RESET & TYPOGRAPHY
 ───────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -94,10 +95,55 @@ section[id] {
 body {
   background-color: var(--color-surface);
   color: var(--color-text-body);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
   line-height: 1.6;
   max-width: 100%;
   overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.012em;
+  text-wrap: balance;
+}
+
+.font-display {
+  font-family: "Clash Display", "Satoshi", "Inter", system-ui, sans-serif;
+  letter-spacing: 0.012em !important;
+}
+
+.font-sans {
+  font-family: "Satoshi", "Inter", system-ui, sans-serif;
+}
+
+.fluid-display {
+  font-size: clamp(2rem, 3.5vw + 0.25rem, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: 0.012em !important;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.fluid-h2 {
+  font-size: clamp(1.625rem, 2.25vw + 0.4rem, 2.25rem);
+  line-height: 1.14;
+  letter-spacing: 0.012em !important;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.fluid-lead {
+  font-size: clamp(1rem, 0.8vw + 0.9rem, 1.2rem);
+  line-height: 1.55;
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-orange);
 }
 
 .navbar-glass {

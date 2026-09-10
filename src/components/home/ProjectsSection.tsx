@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { inter } from "@/lib/fonts";
 
 const projects = [
   {
@@ -58,7 +57,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className={`relative overflow-hidden bg-[#F9F8F5] py-20 text-[#1A1A18] sm:py-24 lg:py-32 ${inter.className}`}
+      className="relative overflow-hidden bg-[#F9F8F5] py-20 text-[#1A1A18] sm:py-24 lg:py-32"
     >
       <div className="relative homepage-shell">
         {/* Subtle top divider line matching reference */}

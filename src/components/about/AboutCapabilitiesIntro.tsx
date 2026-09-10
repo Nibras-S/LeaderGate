@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { inter } from "@/lib/fonts";
 import { CtaButton } from "@/components/ui/CtaButton";
 
 const capabilities = [
@@ -56,7 +55,7 @@ export function AboutCapabilitiesIntro({
   const Heading = pageHero ? "h1" : "h2";
 
   return (
-    <div className={`bg-[#F9F8F5] text-[#1A1A18] ${inter.className}`}>
+    <div className="bg-[#F9F8F5] text-[#1A1A18]">
       <section
         id={pageHero ? "hero" : "about"}
         className={`relative overflow-hidden bg-[#F9F8F5] pb-14 sm:pb-16 lg:pb-14 ${

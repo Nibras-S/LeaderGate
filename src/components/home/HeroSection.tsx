@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { inter } from "@/lib/fonts";
 import { ResponsiveHeroVideo } from "@/components/home/ResponsiveHeroVideo";
 import { CtaButton } from "@/components/ui/CtaButton";
 
@@ -36,7 +35,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className={`relative flex h-[100svh] min-h-[600px] w-full flex-col justify-end overflow-hidden bg-[#0A0A09] pb-16 sm:pb-20 lg:h-[100dvh] lg:min-h-[660px] lg:justify-end lg:pb-20 xl:pb-24 ${inter.className}`}
+      className="relative flex h-[100svh] min-h-[600px] w-full flex-col justify-end overflow-hidden bg-[#0A0A09] pb-16 sm:pb-20 lg:h-[100dvh] lg:min-h-[660px] lg:justify-end lg:pb-20 xl:pb-24"
     >
       {/* Background Video — Cinematic & Clearly Visible */}
       <div className="absolute inset-0 z-0 overflow-hidden">
