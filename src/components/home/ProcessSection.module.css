@@ -1,0 +1,374 @@
+/* Section Container */
+.section {
+  position: relative;
+  height: 320vh; /* Generous scroll track for smooth step-by-step locking */
+  background: var(--color-surface, #f9f8f5);
+  border-top: 1px solid #e5e3dc;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4.5rem 0 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+/* Header Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.headerMain {
+  max-width: 840px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-display), "Cabinet Grotesk", sans-serif;
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  font-weight: 600;
+  color: var(--color-text-primary, #1a1a18);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans), "Satoshi", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--color-text-muted, #7a7972);
+  text-transform: uppercase;
+  padding-left: 1.25rem;
+  border-left: 1px solid #e3e2dc;
+  height: 2rem;
+}
+
+.badgeSquare {
+  width: 7px;
+  height: 7px;
+  background: var(--color-orange, #f26522);
+  display: inline-block;
+  border-radius: 1.5px;
+}
+
+.subtitle {
+  font-family: var(--font-sans), "Satoshi", sans-serif;
+  font-size: 1.05rem;
+  color: #626760;
+  margin-top: 0.6rem;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 42rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e3dc;
+  margin: 1.5rem 0 1.75rem 0;
+}
+
+/* Grid Layout (4x2 Checkerboard) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  position: relative;
+}
+
+.stepBlock {
+  display: contents;
+}
+
+/* Column transition base styles */
+.colItem {
+  will-change: transform, opacity;
+  transition:
+    transform 0.08s ease-out,
+    opacity 0.08s ease-out;
+}
+
+/* Cards Styling */
+.card {
+  background: #ffffff;
+  border: 1px solid #e3e2dc;
+  border-radius: 16px;
+  padding: 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1 / 0.88;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  border-color: var(--color-orange, #f26522);
+  box-shadow: 0 16px 36px rgba(242, 101, 34, 0.08);
+}
+
+.cardStep {
+  font-family: var(--font-sans), "Satoshi", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #7a7972);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cardContent {
+  margin-top: auto;
+}
+
+.cardTitle {
+  font-family: var(--font-display), "Cabinet Grotesk", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1a1a18);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.45rem;
+}
+
+.cardDesc {
+  font-family: var(--font-sans), "Satoshi", sans-serif;
+  font-size: 0.9rem;
+  color: #626760;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* Image Box Styling */
+.imageBox {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1 / 0.88;
+  position: relative;
+  background: #f1f5f9;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.imageBox:hover img {
+  transform: scale(1.05);
+}
+
+/* Grid Positioning for Desktop 4-Column Interlocking Checkerboard */
+.cardCol1Top { grid-column: 1; grid-row: 1; }
+.imageCol1Bottom { grid-column: 1; grid-row: 2; }
+
+.imageCol2Top { grid-column: 2; grid-row: 1; }
+.cardCol2Bottom { grid-column: 2; grid-row: 2; }
+
+.cardCol3Top { grid-column: 3; grid-row: 1; }
+.imageCol3Bottom { grid-column: 3; grid-row: 2; }
+
+.imageCol4Top { grid-column: 4; grid-row: 1; }
+.cardCol4Bottom { grid-column: 4; grid-row: 2; }
+
+/* Tablet Responsiveness (2-Columns) */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.25rem;
+  }
+
+  .cardCol1Top { grid-column: 1; grid-row: 1; }
+  .imageCol1Bottom { grid-column: 1; grid-row: 2; }
+
+  .imageCol2Top { grid-column: 2; grid-row: 1; }
+  .cardCol2Bottom { grid-column: 2; grid-row: 2; }
+
+  .cardCol3Top { grid-column: 1; grid-row: 3; }
+  .imageCol3Bottom { grid-column: 1; grid-row: 4; }
+
+  .imageCol4Top { grid-column: 2; grid-row: 3; }
+  .cardCol4Bottom { grid-column: 2; grid-row: 4; }
+}
+
+/* Mobile Responsiveness (Sticky Stacking like Klayagency) */
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    padding: 3rem 0 4rem 0;
+  }
+
+  .sticky {
+    position: static;
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .titleWrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    padding-left: 0;
+    border-left: none;
+    height: auto;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    margin-top: 0.2rem;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .divider {
+    margin: 1.15rem 0 2rem 0;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  /* Each Step (Card + Image) is a single sticky block */
+  .stepBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: sticky;
+    top: 80px;
+    margin-bottom: 20vh;
+    background: var(--color-surface, #f9f8f5);
+  }
+
+  .step1 { z-index: 1; }
+  .step2 { z-index: 2; }
+  .step3 { z-index: 3; }
+  .step4 { z-index: 4; margin-bottom: 0; }
+
+  /* Ensure Card is top (order: 1) and Image is bottom (order: 2) on mobile */
+  .cardCol1Top { order: 1; }
+  .imageCol1Bottom { order: 2; }
+
+  .cardCol2Bottom { order: 1; }
+  .imageCol2Top { order: 2; }
+
+  .cardCol3Top { order: 1; }
+  .imageCol3Bottom { order: 2; }
+
+  .cardCol4Bottom { order: 1; }
+  .imageCol4Top { order: 2; }
+
+  .colItem {
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+
+  .card {
+    position: relative;
+    top: auto;
+    margin-bottom: 0;
+    aspect-ratio: 1 / 0.82;
+    min-height: 195px;
+    padding: 1.5rem 1.35rem;
+    background: #ffffff;
+    border: 1px solid #e3e2dc;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .cardTitle {
+    font-family: var(--font-display), "Cabinet Grotesk", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-primary, #1a1a18);
+    letter-spacing: -0.025em;
+  }
+
+  .cardDesc {
+    font-family: var(--font-sans), "Satoshi", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #626760;
+  }
+
+  .imageBox {
+    position: relative;
+    top: auto;
+    margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    height: auto;
+  }
+  .sticky {
+    position: static;
+    min-height: 0;
+    padding: 4rem 0;
+  }
+  .colItem {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
