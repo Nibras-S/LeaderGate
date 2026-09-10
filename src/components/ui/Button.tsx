@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+export { CtaButton } from "./CtaButton";
+export type { CtaButtonProps, CtaButtonVariant } from "./CtaButton";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost-invert";
 type ButtonSize = "sm" | "md" | "lg";

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { inter } from "@/lib/fonts";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 const capabilities = [
   {
@@ -77,17 +78,12 @@ export function AboutCapabilitiesIntro({
               that help businesses stand out across the UAE.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Link
+              <CtaButton
                 href={pageHero ? "#story" : "/about"}
-                className="group inline-flex min-h-14 items-center gap-8 rounded-full bg-[#F26522] px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-200 hover:bg-[#DC5510] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"
+                variant="dark"
               >
                 Our story
-                <ArrowRight
-                  size={18}
-                  weight="bold"
-                  className="transition-transform duration-200 group-hover:translate-x-1"
-                />
-              </Link>
+              </CtaButton>
               <Link
                 href="/#projects"
                 className="group inline-flex min-h-12 items-center gap-6 border-b border-[#1A1A18]/50 text-sm font-semibold text-[#1A1A18] transition-colors hover:border-[#F26522] hover:text-[#F26522] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F26522]"

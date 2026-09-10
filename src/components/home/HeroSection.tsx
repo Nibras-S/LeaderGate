@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { inter } from "@/lib/fonts";
 import { ResponsiveHeroVideo } from "@/components/home/ResponsiveHeroVideo";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 const ROTATING_CAPABILITIES = [
   "Signage & Fabrication",
@@ -78,21 +77,9 @@ export function HeroSection() {
 
           {/* Primary CTA: Glass / Pill-style Button */}
           <div className="mt-6 sm:mt-8">
-            <Link
-              href="#projects"
-              className="group inline-flex items-center justify-between gap-5 sm:gap-7 pl-6 pr-2 py-2 sm:pl-7 sm:pr-2.5 sm:py-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] border border-white/20 hover:border-white/35 backdrop-blur-md shadow-lg shadow-black/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-            >
-              <span className="text-sm sm:text-base font-medium text-white tracking-[-0.01em]">
-                Explore Our Projects
-              </span>
-              <span className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[var(--color-orange)] text-[#0F0F0D] transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <ArrowUpRight
-                  size={20}
-                  weight="bold"
-                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </span>
-            </Link>
+            <CtaButton href="#projects" variant="glass">
+              Explore Our Projects
+            </CtaButton>
           </div>
         </div>
       </div>

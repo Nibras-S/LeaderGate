@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { inter } from "@/lib/fonts";
 
 const projects = [
@@ -93,9 +94,14 @@ export function ProjectsSection() {
               <div className="mt-4 sm:mt-6">
                 <Link
                   href="#project-grid"
-                  className="text-xs sm:text-sm font-semibold text-[#1A1A18] hover:text-[#B74716] transition-colors inline-flex items-center gap-1.5"
+                  className="group text-xs sm:text-sm font-semibold text-[#1A1A18] hover:text-[#B74716] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span>Explore all projects</span>
+                  <ArrowRight
+                    size={14}
+                    weight="bold"
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  />
                 </Link>
               </div>
             </div>

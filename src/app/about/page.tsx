@@ -9,6 +9,7 @@ import {
   CheckCircle,
 } from "@phosphor-icons/react/dist/ssr";
 import { inter } from "@/lib/fonts";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
   title: "About Us | Leader Gate — Premier UAE Signage & Fabrication",
@@ -397,15 +398,12 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
+              <CtaButton
                 href="/#contact"
-                className="inline-flex items-center gap-3.5 pl-7 pr-3 py-3 rounded-full bg-[#0F0F0D] text-white text-sm font-medium transition-all duration-200 hover:bg-[#1C1C1A] hover:scale-[1.01] active:scale-[0.98] shadow-md group cursor-pointer"
+                variant="dark"
               >
-                <span>Request a Technical Consultation</span>
-                <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-0.5">
-                  <ArrowRight size={15} weight="bold" />
-                </span>
-              </Link>
+                Request a Technical Consultation
+              </CtaButton>
 
               <Link
                 href="/#projects"

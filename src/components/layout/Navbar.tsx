@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ArrowRight } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/Button";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 const menuItems = [
   { label: "Home", href: "#hero" },
@@ -227,16 +228,13 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
 
                 {/* Prominent CTA */}
                 <div className="mt-8 sm:mt-10 pt-6 border-t border-white/10">
-                  <Button
-                    variant="primary"
-                    size="lg"
+                  <CtaButton
                     href="#contact"
+                    variant="glass"
                     onClick={() => setMenuOpen(false)}
-                    className="shadow-xl shadow-orange-500/20"
                   >
-                    <span>Start Your Project</span>
-                    <ArrowRight size={18} />
-                  </Button>
+                    Start Your Project
+                  </CtaButton>
                 </div>
               </div>
             </div>
