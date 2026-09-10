@@ -63,7 +63,7 @@ export function AboutCapabilitiesIntro({
         }`}
       >
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(26,26,24,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(26,26,24,0.025)_1px,transparent_1px)] bg-[size:5rem_5rem]" />
-        <div className="relative mx-auto grid max-w-[1440px] gap-10 px-6 sm:px-10 lg:grid-cols-[0.82fr_1.38fr] lg:items-center lg:gap-16 lg:px-14">
+        <div className="relative homepage-shell grid gap-10 lg:grid-cols-[0.82fr_1.38fr] lg:items-center lg:gap-16">
           <div id={pageHero ? "about" : undefined} className="max-w-[39rem]">
             <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.3em] text-[#F26522] lg:hidden">
               About Leader Gate
@@ -142,7 +142,7 @@ export function AboutCapabilitiesIntro({
         id="capabilities"
         className="relative bg-[#F9F8F5] pb-20 sm:pb-24 lg:pb-28"
       >
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
+        <div className="homepage-shell">
           <div className="border-t border-[#1A1A18]/15 pt-8 sm:pt-10">
             <div className="mb-6 sm:mb-8">
               <h2 className="text-3xl font-semibold tracking-[-0.045em] text-[#171715] sm:text-4xl">

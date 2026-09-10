@@ -1,65 +1,34 @@
 import Image from "next/image";
+import Link from "next/link";
 import { inter } from "@/lib/fonts";
 
 const stats = [
   { number: "500+", label: "Projects delivered" },
-  { number: "100+", label: "Corporate clients" },
-  { number: "10+", label: "Years in the industry" },
-  { number: "7", label: "Emirates covered" },
+  { number: "10+", label: "Years of experience" },
+  { number: "7", label: "Emirates served" },
 ];
 
 export function ExperienceSection() {
   return (
-    <section
-      id="experience"
-      className={`bg-[#F9F8F5] py-24 text-[#1A1A18] sm:py-28 lg:py-36 ${inter.className}`}
-    >
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:items-stretch lg:gap-16 lg:px-14">
-        <div className="relative min-h-[28rem] overflow-hidden rounded-2xl bg-[#262620] lg:col-span-7 lg:min-h-[42rem]">
-          <Image
-            src="/images/about/fabrication-facility.jpg"
-            alt="Leader Gate team operating fabrication equipment in the UAE facility"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 58vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10" />
-          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
-            <p className="max-w-lg text-lg font-medium leading-snug tracking-[-0.025em] text-white sm:text-2xl">
-              Every project is planned, produced, checked, and installed by teams
-              working to one shared standard.
-            </p>
+    <section id="experience" className={`bg-[#F9F8F5] pb-20 pt-4 text-[#1A1A18] sm:pb-28 lg:pb-36 ${inter.className}`}>
+      <div className="homepage-shell">
+        <div id="why-us" className="grid scroll-mt-24 items-center gap-10 border-t border-[#DCDDD6] pt-16 lg:grid-cols-2 lg:gap-20 lg:pt-24">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#E3E1DA]">
+            <Image src="/images/about/fabrication-facility.jpg" alt="Fabrication equipment at the Leader Gate workshop" fill className="object-cover" sizes="(max-width: 1023px) 100vw, 50vw" />
           </div>
-        </div>
-
-        <div className="flex flex-col justify-between lg:col-span-5 lg:py-2">
           <div>
-            <h2 className="max-w-[12ch] text-[clamp(2.65rem,4.6vw,4.75rem)] font-medium leading-[0.96] tracking-[-0.05em] text-[#1A1A18] text-balance">
-              Experience you can measure. Quality you can see.
-            </h2>
-            <p className="mt-6 max-w-md text-base font-normal leading-relaxed text-[#626760] sm:text-lg">
-              Our reputation comes from completed work, repeat clients, and a
-              consistent standard from the first drawing to the final fixing.
-            </p>
+            <h2 className="max-w-[18ch] text-4xl font-medium leading-[1.08] tracking-[-0.045em] sm:text-5xl lg:text-[3.5rem]">One team. From drawing to installation.</h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#626760] sm:text-lg">We design, fabricate, and install signage in-house. Every detail stays with the people who bring it to life.</p>
+            <Link href="/about#story" className="mt-7 inline-flex min-h-11 items-center border-b border-[#999C94] text-sm font-medium transition-colors hover:border-[#B74716] hover:text-[#B74716] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B74716]">Inside Leader Gate</Link>
+            <dl className="mt-12 grid grid-cols-3 gap-4 border-t border-[#DCDDD6] pt-7">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-3xl font-medium tracking-[-0.05em] tabular-nums sm:text-4xl">{stat.number}</dt>
+                  <dd className="mt-2 max-w-28 text-xs leading-relaxed text-[#626760] sm:text-sm">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-
-          <dl className="mt-12 grid grid-cols-2 border-t border-[#DCDDD6] lg:mt-16">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className={`min-h-36 py-6 ${
-                  index % 2 === 0 ? "pr-5" : "border-l border-[#DCDDD6] pl-5"
-                } ${index > 1 ? "border-t border-[#DCDDD6]" : ""}`}
-              >
-                <dt className="text-4xl font-medium tracking-[-0.06em] text-[#B74716] tabular-nums sm:text-5xl">
-                  {stat.number}
-                </dt>
-                <dd className="mt-2 max-w-32 text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-[#626760]">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </div>
     </section>

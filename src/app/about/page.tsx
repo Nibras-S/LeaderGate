@@ -340,7 +340,7 @@ export default function AboutPage() {
         {/* ─────────────────────────────────────────────
             SECTION 4: Turnkey Execution Blueprint
         ───────────────────────────────────────────── */}
-        <section className="py-20 sm:py-28 bg-[#0F0F0D] text-white">
+        <section id="process" className="scroll-mt-24 py-20 sm:py-28 bg-[#0F0F0D] text-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
             <div className="max-w-2xl mb-14 sm:mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[0.6875rem] font-medium tracking-[0.2em] uppercase text-white/70 mb-4">

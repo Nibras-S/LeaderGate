@@ -1,17 +1,39 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
 import { inter } from "@/lib/fonts";
 import { ResponsiveHeroVideo } from "@/components/home/ResponsiveHeroVideo";
+
+const ROTATING_CAPABILITIES = [
+  "Signage & Fabrication",
+  "Design & Brand Development",
+  "Printing & Graphics",
+  "Installation & Deployment",
+];
 
 /**
  * HERO SECTION
  *
- * Glass / pill-style CTA layout matching design mockup:
- * - Headline: "Building Brands / Through / Exceptional Signage" with orange accent
+ * Glass / pill-style CTA layout with dynamic capability ticker:
+ * - Headline: "Building Brands / Through / [Rotating Capability]"
+ * - Dynamic 3rd line: Smoothly rotates across core capabilities in brand orange
  * - Subtitle: "Precision engineering and turnkey architectural fabrication across the UAE."
  * - Primary CTA: Glass pill button "Explore Our Projects" with orange circular ArrowUpRight badge
  */
 export function HeroSection() {
+  const [capabilityIndex, setCapabilityIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCapabilityIndex((prev) => (prev + 1) % ROTATING_CAPABILITIES.length);
+    }, 3600);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -28,12 +50,25 @@ export function HeroSection() {
 
       {/* Hero Content — Centered container with lower placement and refined padding */}
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-10">
-        <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl">
-          {/* Heading — 3 clean lines, title case, bold weight, orange accent on Exceptional Signage */}
+        <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl">
+          {/* Heading — 3 clean lines, title case, bold weight, fixed-height rotating orange capability */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] xl:text-[3.75rem] leading-[1.14] lg:leading-[1.1] font-bold tracking-[-0.03em] text-white">
             Building Brands <br />
             Through <br />
-            <span className="text-[var(--color-orange)]">Exceptional Signage</span>
+            <span className="relative block h-[1.35em] lg:h-[1.3em] overflow-hidden text-[var(--color-orange)]">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.span
+                  key={ROTATING_CAPABILITIES[capabilityIndex]}
+                  initial={{ opacity: 0, y: "100%" }}
+                  animate={{ opacity: 1, y: "0%" }}
+                  exit={{ opacity: 0, y: "-100%" }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="block w-full"
+                >
+                  {ROTATING_CAPABILITIES[capabilityIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </h1>
 
           {/* Description — Lighter typography, airy and refined */}
