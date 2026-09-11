@@ -183,24 +183,24 @@ export default function AboutPage() {
 
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-[#5E686D]">
                   <p>
-                    At <strong className="font-semibold text-[#171715]">Leader Gate</strong>,
-                    we create powerful brand experiences through strategic design,
-                    precision fabrication, and flawless execution. As a leading UAE
-                    signage, branding, and fabrication company, we deliver complete
-                    visual solutions that help businesses establish a stronger and
-                    more memorable presence.
+                    At Leader Gate, we create powerful brand experiences through
+                    strategic design, precision fabrication, and flawless execution.
+                    As a leading UAE signage, branding, and fabrication company, we
+                    deliver complete visual solutions that help businesses establish a
+                    stronger and more memorable presence.
                   </p>
                   <p>
-                    From <strong className="font-semibold text-[#171715]">concept development and manufacturing to professional installation and ongoing support</strong>,
-                    our dedicated teams combine advanced machinery, experienced
-                    craftsmanship, and meticulous project management to deliver
-                    exceptional results.
+                    From concept development and manufacturing to professional
+                    installation and ongoing support, our dedicated teams combine
+                    advanced machinery, experienced craftsmanship, and meticulous
+                    project management to deliver exceptional results.
                   </p>
                   <p>
-                    Our expertise spans <strong className="font-semibold text-[#171715]">architectural signage, corporate branding, large-scale printing, custom fabrication, and multi-location rollouts</strong>.
-                    Whether it&apos;s a single retail destination or a large-scale
-                    corporate project, we bring the same commitment to quality,
-                    reliability, and excellence to every detail.
+                    Our expertise spans architectural signage, corporate branding,
+                    large-scale printing, custom fabrication, and multi-location
+                    rollouts. Whether it&apos;s a single retail destination or a
+                    large-scale corporate project, we bring the same commitment to
+                    quality, reliability, and excellence to every detail.
                   </p>
                 </div>
 
