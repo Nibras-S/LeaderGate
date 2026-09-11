@@ -53,7 +53,7 @@ export function ServicesGallerySection() {
   }, []);
 
   return (
-    <section id="services-showcase" className="w-full bg-[#F4F3F0] text-[#1A1A18] border-t border-[#E5E3DC]">
+    <section id="services-showcase" className="w-full bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC]">
       {/* Header Container */}
       <div className="flex flex-col items-center justify-center py-20 px-6 sm:py-24 md:py-28 text-center">
         <div className="max-w-3xl flex flex-col items-center gap-4">

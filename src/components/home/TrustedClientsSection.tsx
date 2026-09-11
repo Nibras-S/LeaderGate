@@ -124,7 +124,7 @@ export function TrustedClientsSection() {
   return (
     <section
       id="clients"
-      className="relative w-full bg-[#F4F3F0] py-14 sm:py-16 md:py-20 border-y border-[#E5E3DC] overflow-hidden"
+      className="relative w-full bg-[#F9F8F5] py-14 sm:py-16 md:py-20 border-y border-[#E5E3DC] overflow-hidden"
     >
       {/* Eyebrow / Section Title matching reference */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
