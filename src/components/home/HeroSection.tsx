@@ -47,7 +47,7 @@ export function HeroSection() {
       </div>
 
       {/* Hero Content — Centered container with lower placement and refined padding */}
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-10">
+      <div className="relative z-10 homepage-shell">
         <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl">
           {/* Heading — 3 clean lines, title case, bold weight, fixed-height rotating orange capability */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] xl:text-[3.75rem] leading-[1.14] lg:leading-[1.1] font-bold tracking-[-0.03em] text-white">

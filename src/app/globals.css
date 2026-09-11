@@ -278,11 +278,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Shared gutters for the homepage's editorial sections and light footer. */
+/* Shared landing-page content width. Media rails stay full-bleed by design. */
 .homepage-shell,
 .container-page.homepage-shell {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .homepage-shell,
   .container-page.homepage-shell {
-    padding-inline: 2rem;
+    padding-inline: 2.5rem;
   }
 }
 

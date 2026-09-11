@@ -5,18 +5,18 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const IMAGES = [
-  "/product-showcase/siete-taco-shells-mild-salsa-mild-seasoning-9x16.avif",
-  "/product-showcase/pepsico-s-net-water-positive-infographic.avif",
-  "/product-showcase/cheetos-flamin-hot-cheetos-esquites-038.avif",
-  "/product-showcase/lays-ad-classic-example-bento-2.avif",
-  "/product-showcase/Tostiots_Tabletop_HOL.avif",
-  "/product-showcase/gatorade-bento-gatorlyte-cherrylime-powder-pdp.avif",
-  "/product-showcase/In-The-Kitchen-poppi-Hero-1200x860.avif",
-  "/product-showcase/siete-maiz-shells-mild-salsa-mild-seasoning-9x16.avif",
-  "/product-showcase/pepsi-classic-12oz-on-ice-tm-4860-refreshed.jpg",
-  "/product-showcase/siete-taco-shells-mild-salsa-mild-seasoning-9x16.avif",
-  "/product-showcase/gatorade-bento-gatorlyte-cherrylime-powder-pdp.avif",
-  "/product-showcase/pepsi-classic-12oz-on-ice-tm-4860-refreshed.jpg",
+  "/images/projects/al-masraf.png",
+  "/images/about/fabrication-laser.jpg",
+  "/images/projects/jaecoo.png",
+  "/images/about/fabrication-cnc.jpg",
+  "/images/projects/sobha.png",
+  "/images/about/fabrication-craftsman.jpg",
+  "/images/projects/dominos.png",
+  "/images/about/fabrication-facility.jpg",
+  "/images/projects/al-madina.png",
+  "/images/about/fabrication-cad.jpg",
+  "/images/projects/chums.png",
+  "/images/projects/jaecoo-2.png",
 ];
 
 export function ServicesGallerySection() {
@@ -54,7 +54,7 @@ export function ServicesGallerySection() {
   return (
     <section id="services-showcase" className="w-full bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC]">
       {/* Header Container */}
-      <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 md:py-18 text-center">
+      <div className="homepage-shell flex flex-col items-center justify-center py-10 sm:py-14 md:py-18 text-center">
         <div className="max-w-3xl flex flex-col items-center gap-4">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#7A7972]">
             <span className="h-[7px] w-[7px] rounded-[1.5px] bg-[#F26522]" />

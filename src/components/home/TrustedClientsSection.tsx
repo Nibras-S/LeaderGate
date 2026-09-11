@@ -139,7 +139,7 @@ export function TrustedClientsSection({ variant = "all" }: TrustedClientsSection
       className={`relative w-full bg-[#F9F8F5] py-9 sm:py-11 md:py-13 border-y border-[#E5E3DC] overflow-hidden ${visibilityClass}`}
     >
       {/* Eyebrow / Section Title matching reference */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="homepage-shell">
         <p className="text-center text-[0.6875rem] sm:text-xs font-medium uppercase tracking-[0.22em] text-[#7A7972] mb-6 sm:mb-7">
           Trusted by Industry Leaders
         </p>
