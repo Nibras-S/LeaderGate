@@ -112,7 +112,7 @@ export function ProjectsSection() {
           id="project-grid"
           className="grid scroll-mt-24 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8"
         >
-          {projects.map((project) => (
+          {projects.slice(0, 3).map((project) => (
             <article
               key={project.id}
               tabIndex={0}

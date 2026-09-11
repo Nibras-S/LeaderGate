@@ -8,7 +8,6 @@ import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { ExperienceSection } from "@/components/home/ExperienceSection";
 import { ProcessMinimalSection } from "@/components/home/ProcessMinimalSection";
 import { ServicesGallerySection } from "@/components/home/ServicesGallerySection";
-import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { FinalCTASection } from "@/components/home/FinalCTASection";
 
 // Homepage: introduction, work, studio, sectors, contact.
@@ -25,7 +24,6 @@ export default function HomePage() {
         <ExperienceSection />
         <ProcessMinimalSection />
         <ServicesGallerySection />
-        <IndustriesSection />
         <FinalCTASection />
       </main>
       <Footer appearance="light" />
