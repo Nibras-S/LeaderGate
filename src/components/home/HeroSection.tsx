@@ -42,8 +42,8 @@ export function HeroSection() {
         <ResponsiveHeroVideo />
 
         {/* Directional scrim: darkens text zone on left, keeps video clear & dramatic on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 55% to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent 40% to-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/76 via-black/30 55% to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/66 via-transparent 40% to-black/42 pointer-events-none" />
       </div>
 
       {/* Hero Content — Centered container with lower placement and refined padding */}
