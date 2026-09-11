@@ -20,7 +20,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-[#F9F8F5] text-[#1A1A18] py-10 sm:py-14 lg:py-18"
+      className="bg-[var(--color-surface)] text-[#1A1A18] py-10 sm:py-14 lg:py-18"
       aria-labelledby="about-title"
     >
       <div className="homepage-shell">

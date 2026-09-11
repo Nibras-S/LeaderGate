@@ -3,7 +3,7 @@
   padding: 2.5rem 0 0;
 }
 
-.light { background: #f9f8f5; color: #1a1a18; border-top: 1px solid #e5e3dc; }
+.light { background: var(--color-surface); color: #1a1a18; border-top: 1px solid #e5e3dc; }
 .dark { background: #0f0f0d; color: #f9f8f5; border-top: 1px solid rgba(255, 255, 255, 0.08); }
 
 .shell { position: relative; }

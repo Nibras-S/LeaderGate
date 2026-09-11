@@ -22,7 +22,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC] py-10 sm:py-13 lg:py-16"
+      className="bg-[var(--color-surface)] text-[#1A1A18] border-t border-[#E5E3DC] py-10 sm:py-13 lg:py-16"
     >
       <div className="homepage-shell">
         {/* ── MOBILE ONLY: Title & Narrative First for Immediate Context ── */}

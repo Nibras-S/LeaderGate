@@ -51,7 +51,7 @@ export function ProcessMinimalSection() {
   return (
     <section
       id="process"
-      className="relative bg-[#F9F8F5] py-10 sm:py-14 lg:py-16 border-t border-[#1A1A18]/10"
+      className="relative bg-[var(--color-surface)] py-10 sm:py-14 lg:py-16 border-t border-[#1A1A18]/10"
       aria-labelledby="process-title"
     >
       <div className="homepage-shell">

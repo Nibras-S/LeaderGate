@@ -136,7 +136,7 @@ export function TrustedClientsSection({ variant = "all" }: TrustedClientsSection
   return (
     <section
       id={isMobileOnly ? "clients-mobile" : "clients"}
-      className={`relative w-full bg-[#F9F8F5] py-9 sm:py-11 md:py-13 border-y border-[#E5E3DC] overflow-hidden ${visibilityClass}`}
+      className={`relative w-full bg-[var(--color-surface)] py-9 sm:py-11 md:py-13 border-y border-[#E5E3DC] overflow-hidden ${visibilityClass}`}
     >
       {/* Eyebrow / Section Title matching reference */}
       <div className="homepage-shell">

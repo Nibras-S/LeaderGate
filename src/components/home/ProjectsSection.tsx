@@ -58,7 +58,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#F9F8F5] py-10 text-[#1A1A18] sm:py-14 lg:py-16"
+      className="relative overflow-hidden bg-[var(--color-surface)] py-10 text-[#1A1A18] sm:py-14 lg:py-16"
     >
       <div className="relative homepage-shell">
         {/* Subtle top divider line matching reference on desktop */}
