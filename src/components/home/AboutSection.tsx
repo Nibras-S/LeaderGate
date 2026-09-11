@@ -20,7 +20,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-[#F9F8F5] text-[#1A1A18] py-20 sm:py-24 lg:py-28"
+      className="bg-[#F9F8F5] text-[#1A1A18] py-10 sm:py-14 lg:py-18"
       aria-labelledby="about-title"
     >
       <div className="homepage-shell">
@@ -69,7 +69,7 @@ export function AboutSection() {
           </figure>
         </div>
 
-        <div className="mt-14 grid gap-8 border-t border-[#1A1A18]/10 pt-10 sm:grid-cols-2 lg:gap-16">
+        <div className="mt-9 grid gap-8 border-t border-[#1A1A18]/10 pt-7 sm:mt-11 sm:pt-9 sm:grid-cols-2 lg:gap-16">
           {benefits.map((benefit) => (
             <article key={benefit.title} className="flex max-w-xl items-start gap-4">
               <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-[#1A1A18]/10 bg-white p-1.5 flex items-center justify-center shadow-sm">

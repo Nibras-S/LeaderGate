@@ -17,9 +17,12 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <TrustedClientsSection />
+        {/* Desktop & Tablet: directly below Hero */}
+        <TrustedClientsSection variant="desktop-only" />
         <AboutSection />
         <CapabilitiesProcessSection />
+        {/* Mobile: placed after Capabilities per user direction */}
+        <TrustedClientsSection variant="mobile-only" />
         <ProjectsSection />
         <ExperienceSection />
         <ProcessMinimalSection />

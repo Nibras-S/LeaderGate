@@ -57,16 +57,16 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#F9F8F5] py-20 text-[#1A1A18] sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#F9F8F5] py-10 text-[#1A1A18] sm:py-14 lg:py-16"
     >
       <div className="relative homepage-shell">
-        {/* Subtle top divider line matching reference */}
-        <div className="mb-10 w-full border-t border-[#E5E3DC] sm:mb-14" />
+        {/* Subtle top divider line matching reference on desktop */}
+        <div className="hidden md:block mb-6 w-full border-t border-[#E5E3DC] sm:mb-8" />
 
         {/* Section Header: Eyebrow + 2-column layout */}
-        <div className="mb-12 sm:mb-14 lg:mb-16">
+        <div className="mb-8 sm:mb-10 lg:mb-12">
           {/* Eyebrow: — SELECTED WORK */}
-          <div className="mb-4 sm:mb-6 flex items-center gap-3 text-[0.6875rem] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#B74716]">
+          <div className="mb-3 sm:mb-4 flex items-center gap-3 text-[0.6875rem] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#B74716]">
             <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
             <span>Selected Work</span>
           </div>

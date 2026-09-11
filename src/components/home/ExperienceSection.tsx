@@ -22,11 +22,11 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC] py-12 sm:py-16 lg:py-20"
+      className="bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC] py-10 sm:py-13 lg:py-16"
     >
       <div className="homepage-shell">
         {/* ── MOBILE ONLY: Title & Narrative First for Immediate Context ── */}
-        <div className="lg:hidden mb-6">
+        <div className="lg:hidden mb-5">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F26522] mb-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
             Experience & Reach
@@ -76,7 +76,7 @@ export function ExperienceSection() {
             </div>
 
             {/* 3 Stats Columns */}
-            <dl className="mt-6 lg:mt-6 grid grid-cols-3 gap-3 sm:gap-4 border-t border-[#DCDDD6] pt-5">
+            <dl className="mt-5 grid grid-cols-3 gap-3 sm:gap-4 border-t border-[#DCDDD6] pt-4">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-display text-2xl sm:text-3xl font-semibold tracking-[-0.04em] text-[#171715] tabular-nums">
@@ -90,8 +90,8 @@ export function ExperienceSection() {
             </dl>
 
             {/* Across Industries */}
-            <div id="industries" className="mt-6 border-t border-[#DCDDD6] pt-5">
-              <h3 className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#171715] mb-3">
+            <div id="industries" className="mt-5 border-t border-[#DCDDD6] pt-4">
+              <h3 className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#171715] mb-2.5">
                 Across industries
               </h3>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3 list-none p-0 m-0">

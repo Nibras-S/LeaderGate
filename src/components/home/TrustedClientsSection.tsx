@@ -111,24 +111,36 @@ const mobilePairs: [Client, Client][] = [
   [clients[10], clients[11]],
 ];
 
+interface TrustedClientsSectionProps {
+  variant?: "all" | "desktop-only" | "mobile-only";
+}
+
 /**
  * TRUSTED CLIENTS SECTION — 02
  *
  * Implements reference designs:
- * - Desktop: Full-width single continuous row horizontal scrolling marquee across almost full viewport width
- *   (increased scale, generous 5vw side fade, large gaps between logos)
- * - Mobile: 2-column divided grid with subtle 1px internal divider lines (exact match to media_1788959362760.png)
- * - Palette: Warm off-white background (#F4F3F0) with dark charcoal monochrome client logos
+ * - Desktop: Full-Width Single-Row Horizontal Infinite Marquee
+ * - Mobile: 2-Column Divided Grid
+ * - Supports responsive placement (e.g. desktop below Hero, mobile after Capabilities)
  */
-export function TrustedClientsSection() {
+export function TrustedClientsSection({ variant = "all" }: TrustedClientsSectionProps) {
+  const isDesktopOnly = variant === "desktop-only";
+  const isMobileOnly = variant === "mobile-only";
+
+  const visibilityClass = isDesktopOnly
+    ? "hidden md:block"
+    : isMobileOnly
+    ? "block md:hidden"
+    : "";
+
   return (
     <section
-      id="clients"
-      className="relative w-full bg-[#F9F8F5] py-14 sm:py-16 md:py-20 border-y border-[#E5E3DC] overflow-hidden"
+      id={isMobileOnly ? "clients-mobile" : "clients"}
+      className={`relative w-full bg-[#F9F8F5] py-9 sm:py-11 md:py-13 border-y border-[#E5E3DC] overflow-hidden ${visibilityClass}`}
     >
       {/* Eyebrow / Section Title matching reference */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-[0.6875rem] sm:text-xs font-medium uppercase tracking-[0.22em] text-[#7A7972] mb-9 sm:mb-12">
+        <p className="text-center text-[0.6875rem] sm:text-xs font-medium uppercase tracking-[0.22em] text-[#7A7972] mb-6 sm:mb-7">
           Trusted by Industry Leaders
         </p>
       </div>
@@ -139,69 +151,73 @@ export function TrustedClientsSection() {
           - Increased logo scale and generous proportional spacing
           - Subtle 5vw side fade mask (no large blank areas)
       ────────────────────────────────────────────────────────── */}
-      <div className="hidden md:block relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5vw,black_calc(100%-5vw),transparent)]">
-        <div className="animate-marquee flex items-center gap-16 md:gap-20 lg:gap-24 xl:gap-28 py-3">
-          {[...clients, ...clients].map((client, idx) => (
-            <div
-              key={`${client.name}-${idx}`}
-              className="flex-shrink-0 flex items-center justify-center transition-transform duration-300 hover:scale-105 cursor-pointer"
-              title={client.name}
-            >
-              <Image
-                src={client.src}
-                alt={client.alt}
-                width={260}
-                height={90}
-                className={`w-auto object-contain opacity-85 hover:opacity-100 transition-opacity duration-200 ${client.desktopClass}`}
-              />
-            </div>
-          ))}
+      {!isMobileOnly && (
+        <div className="hidden md:block relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5vw,black_calc(100%-5vw),transparent)]">
+          <div className="animate-marquee flex items-center gap-16 md:gap-20 lg:gap-24 xl:gap-28 py-3">
+            {[...clients, ...clients].map((client, idx) => (
+              <div
+                key={`${client.name}-${idx}`}
+                className="flex-shrink-0 flex items-center justify-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+                title={client.name}
+              >
+                <Image
+                  src={client.src}
+                  alt={client.alt}
+                  width={260}
+                  height={90}
+                  className={`w-auto object-contain opacity-85 hover:opacity-100 transition-opacity duration-200 ${client.desktopClass}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* ──────────────────────────────────────────────────────────
           MOBILE: 2-Column Divided Grid (Exact match to reference)
       ────────────────────────────────────────────────────────── */}
-      <div className="block md:hidden max-w-sm sm:max-w-md mx-auto px-4">
-        <div className="grid grid-cols-2">
-          {mobilePairs.map((pair, rowIdx) => {
-            const isLastRow = rowIdx === mobilePairs.length - 1;
-            return (
-              <div key={rowIdx} className="contents">
-                {/* Left Column Item */}
-                <div
-                  className={`flex items-center justify-center px-3 py-4 h-24 border-r border-[#E2DFD7] ${
-                    !isLastRow ? "border-b border-[#E2DFD7]" : ""
-                  }`}
-                >
-                  <Image
-                    src={pair[0].src}
-                    alt={pair[0].alt}
-                    width={200}
-                    height={70}
-                    className={`w-auto object-contain opacity-90 ${pair[0].mobileClass}`}
-                  />
-                </div>
+      {!isDesktopOnly && (
+        <div className="block md:hidden max-w-sm sm:max-w-md mx-auto px-4">
+          <div className="grid grid-cols-2">
+            {mobilePairs.map((pair, rowIdx) => {
+              const isLastRow = rowIdx === mobilePairs.length - 1;
+              return (
+                <div key={rowIdx} className="contents">
+                  {/* Left Column Item */}
+                  <div
+                    className={`flex items-center justify-center px-3 py-4 h-24 border-r border-[#E2DFD7] ${
+                      !isLastRow ? "border-b border-[#E2DFD7]" : ""
+                    }`}
+                  >
+                    <Image
+                      src={pair[0].src}
+                      alt={pair[0].alt}
+                      width={200}
+                      height={70}
+                      className={`w-auto object-contain opacity-90 ${pair[0].mobileClass}`}
+                    />
+                  </div>
 
-                {/* Right Column Item */}
-                <div
-                  className={`flex items-center justify-center px-3 py-4 h-24 ${
-                    !isLastRow ? "border-b border-[#E2DFD7]" : ""
-                  }`}
-                >
-                  <Image
-                    src={pair[1].src}
-                    alt={pair[1].alt}
-                    width={200}
-                    height={70}
-                    className={`w-auto object-contain opacity-90 ${pair[1].mobileClass}`}
-                  />
+                  {/* Right Column Item */}
+                  <div
+                    className={`flex items-center justify-center px-3 py-4 h-24 ${
+                      !isLastRow ? "border-b border-[#E2DFD7]" : ""
+                    }`}
+                  >
+                    <Image
+                      src={pair[1].src}
+                      alt={pair[1].alt}
+                      width={200}
+                      height={70}
+                      className={`w-auto object-contain opacity-90 ${pair[1].mobileClass}`}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

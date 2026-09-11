@@ -3,7 +3,6 @@
 import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { CtaButton } from "@/components/ui/CtaButton";
 
 const IMAGES = [
   "/product-showcase/siete-taco-shells-mild-salsa-mild-seasoning-9x16.avif",
@@ -55,7 +54,7 @@ export function ServicesGallerySection() {
   return (
     <section id="services-showcase" className="w-full bg-[#F9F8F5] text-[#1A1A18] border-t border-[#E5E3DC]">
       {/* Header Container */}
-      <div className="flex flex-col items-center justify-center py-20 px-6 sm:py-24 md:py-28 text-center">
+      <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 md:py-18 text-center">
         <div className="max-w-3xl flex flex-col items-center gap-4">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#7A7972]">
             <span className="h-[7px] w-[7px] rounded-[1.5px] bg-[#F26522]" />
@@ -88,22 +87,6 @@ export function ServicesGallerySection() {
       >
         <MobileGalleryColumn images={IMAGES.filter((_, index) => index % 2 === 0)} y={mobileY} />
         <MobileGalleryColumn images={IMAGES.filter((_, index) => index % 2 === 1)} y={mobileY2} />
-      </div>
-
-      {/* Bottom Callout */}
-      <div className="flex flex-col items-center justify-center gap-6 py-20 px-6 text-center md:py-28 md:px-10">
-        <p className="font-display text-2xl font-semibold text-[#1A1A18] tracking-[-0.03em] md:text-3xl max-w-xl text-balance">
-          Ready to elevate your brand presence across the UAE?
-        </p>
-        <p className="text-sm sm:text-base text-[#626760] max-w-md -mt-2">
-          Work directly with our engineers and fabrication specialists from first concept to on-site handover.
-        </p>
-        <CtaButton
-          href="#contact"
-          variant="dark"
-        >
-          Start your project
-        </CtaButton>
       </div>
     </section>
   );
