@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TrustedClientsSection } from "@/components/home/TrustedClientsSection";
 import { AboutSection } from "@/components/home/AboutSection";
+import { CapabilitiesProcessSection } from "@/components/home/CapabilitiesProcessSection";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { ExperienceSection } from "@/components/home/ExperienceSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <HeroSection />
         <TrustedClientsSection />
         <AboutSection />
+        <CapabilitiesProcessSection />
         <ProjectsSection />
         <ExperienceSection />
         <ProcessSection />
