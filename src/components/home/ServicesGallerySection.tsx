@@ -56,8 +56,8 @@ export function ServicesGallerySection() {
       {/* Header Container */}
       <div className="homepage-shell flex flex-col items-center justify-center py-10 sm:py-14 md:py-18 text-center">
         <div className="max-w-3xl flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#7A7972]">
-            <span className="h-[7px] w-[7px] rounded-[1.5px] bg-[#F26522]" />
+          <div className="inline-flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#B74716]">
+            <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
             <span>SERVICES & SHOWCASE</span>
           </div>
           <h2 className="font-display text-3xl font-semibold tracking-[-0.035em] text-[#1A1A18] sm:text-5xl lg:text-6xl text-balance">

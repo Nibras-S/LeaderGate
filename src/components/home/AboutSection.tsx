@@ -26,14 +26,14 @@ export function AboutSection() {
       <div className="homepage-shell">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1.1fr)] lg:items-center lg:gap-14 xl:gap-20">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-[#1A1A18]/15 bg-white px-3.5 py-1 text-[11px] font-medium tracking-wide text-[#1A1A18] shadow-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
-              Who We Are
+            <p className="flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#B74716]">
+              <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
+              About Us
             </p>
 
             <h2
               id="about-title"
-              className="mt-4 max-w-[18ch] font-display text-[clamp(2.1rem,3.4vw,3.35rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-[#171715]"
+              className="mt-3 max-w-[18ch] font-display text-[clamp(2.1rem,3.4vw,3.35rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-[#171715]"
             >
               Your End-to-End <br className="hidden sm:inline" />
               <span className="text-[#F26522]">Signage Partner</span>

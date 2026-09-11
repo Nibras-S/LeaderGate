@@ -69,24 +69,21 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   font-family: var(--font-sans), "Satoshi", sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--color-text-muted, #7a7972);
+  letter-spacing: 0.25em;
+  color: #b74716;
   text-transform: uppercase;
-  padding-left: 1.25rem;
-  border-left: 1px solid #e3e2dc;
-  height: 2rem;
+  height: auto;
 }
 
 .badgeSquare {
-  width: 7px;
-  height: 7px;
-  background: var(--color-orange, #f26522);
+  width: 1.75rem;
+  height: 2px;
+  background: #b74716;
   display: inline-block;
-  border-radius: 1.5px;
 }
 
 .subtitle {
@@ -255,8 +252,6 @@
   }
 
   .badge {
-    padding-left: 0;
-    border-left: none;
     height: auto;
     font-size: 0.75rem;
     letter-spacing: 0.08em;

@@ -27,8 +27,8 @@ export function ExperienceSection() {
       <div className="homepage-shell">
         {/* ── MOBILE ONLY: Title & Narrative First for Immediate Context ── */}
         <div className="lg:hidden mb-5">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F26522] mb-2.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
+          <p className="flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#B74716] mb-2.5">
+            <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
             Experience & Reach
           </p>
           <h2 className="font-display text-2xl font-semibold leading-[1.14] tracking-[-0.035em] sm:text-3xl text-[#171715] text-balance">
@@ -60,8 +60,8 @@ export function ExperienceSection() {
           <div className="flex flex-col justify-center">
             {/* Desktop-only Title & Narrative */}
             <div className="hidden lg:block">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F26522] mb-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
+              <p className="flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#B74716] mb-3">
+                <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
                 Experience & Reach
               </p>
 

@@ -56,8 +56,8 @@ export function ProcessMinimalSection() {
     >
       <div className="homepage-shell">
         <div className="mb-7 sm:mb-9">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F26522]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
+          <p className="flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#B74716]">
+            <span className="h-[2px] w-7 bg-[#B74716]" aria-hidden="true" />
             Working Process
           </p>
           <h2
