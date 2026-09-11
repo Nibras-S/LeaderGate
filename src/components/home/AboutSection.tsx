@@ -5,13 +5,13 @@ const benefits = [
     title: "Precision In-House Manufacturing",
     description:
       "State-of-the-art CNC routers, fiber laser metal cutters, and automated channel letter benders managed 100% in-house with zero third-party dependency.",
-    icon: "/images/built-to-last-icon.webp",
+    icon: "/images/icon-manufacturing-orange.jpg",
   },
   {
     title: "Proven UAE Delivery Track Record",
     description:
       "10+ years of operational excellence with 500+ landmark installations delivered across all 7 Emirates, fully compliant with UAE safety and municipality codes.",
-    icon: "/images/environmentally-friendly-icon.webp",
+    icon: "/images/icon-delivery-orange.jpg",
   },
 ];
 
@@ -72,7 +72,7 @@ export function AboutSection() {
                   alt=""
                   width={40}
                   height={40}
-                  className="h-full w-full object-contain mix-blend-multiply"
+                  className="h-full w-full object-contain"
                   loading="lazy"
                   decoding="async"
                   aria-hidden="true"
