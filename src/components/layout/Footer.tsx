@@ -21,7 +21,6 @@ const footerGroups = [
   {
     title: "Company",
     links: [
-      { label: "About us", href: "/about" },
       { label: "Our work", href: "#projects" },
       { label: "Our process", href: "#process" },
       { label: "Industries", href: "#industries" },

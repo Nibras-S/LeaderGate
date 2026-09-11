@@ -10,12 +10,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 
 const menuItems = [
   { label: "Home", href: "#hero" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Projects", href: "#projects" },
-  { label: "Process", href: "#process" },
-  { label: "Industries", href: "#industries" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  // Additional nav items will be enabled once sections are production-ready
 ];
 
 /**

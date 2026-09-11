@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CtaButton } from "@/components/ui/CtaButton";
 
 const benefits = [
   {
@@ -48,11 +47,6 @@ export function AboutSection() {
               </p>
             </div>
 
-            <div className="mt-8 hidden sm:flex flex-wrap items-center gap-x-6 gap-y-4">
-              <CtaButton href="/about" variant="dark">
-                Our Story
-              </CtaButton>
-            </div>
           </div>
 
           <figure className="relative flex items-center justify-center">
