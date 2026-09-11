@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 const projects = [
   {
@@ -90,7 +91,7 @@ export function ProjectsSection() {
               <p className="text-sm sm:text-base text-[#626760] font-normal leading-relaxed max-w-lg">
                 Across retail, finance, hospitality, automotive, and real estate, each project turns a brand into a physical place people recognize.
               </p>
-              <div className="mt-4 sm:mt-6">
+              <div className="mt-4 sm:mt-6 hidden sm:block">
                 <Link
                   href="#project-grid"
                   className="group text-xs sm:text-sm font-semibold text-[#1A1A18] hover:text-[#B74716] transition-colors inline-flex items-center gap-1.5"
@@ -137,6 +138,13 @@ export function ProjectsSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Mobile CTA Button below the 3 project cards */}
+        <div className="mt-8 flex justify-center sm:hidden">
+          <CtaButton href="#project-grid" variant="dark">
+            Explore all projects
+          </CtaButton>
         </div>
       </div>
     </section>
