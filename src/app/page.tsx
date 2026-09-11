@@ -6,7 +6,6 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { CapabilitiesProcessSection } from "@/components/home/CapabilitiesProcessSection";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { ExperienceSection } from "@/components/home/ExperienceSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
 import { ProcessMinimalSection } from "@/components/home/ProcessMinimalSection";
 import { ServicesGallerySection } from "@/components/home/ServicesGallerySection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
@@ -24,7 +23,6 @@ export default function HomePage() {
         <CapabilitiesProcessSection />
         <ProjectsSection />
         <ExperienceSection />
-        <ProcessSection />
         <ProcessMinimalSection />
         <ServicesGallerySection />
         <IndustriesSection />

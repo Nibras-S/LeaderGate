@@ -148,26 +148,23 @@ export function CapabilitiesProcessSection() {
     <section
       ref={sectionRef}
       className={styles.section}
-      id="capabilities-process"
-      aria-labelledby="capabilities-process-title"
+      id="capabilities"
+      aria-labelledby="capabilities-title"
     >
       <div className={styles.sticky}>
         <div className={styles.container}>
           {/* Header */}
           <div className={styles.header}>
-            <div className={styles.headerMain}>
+            <div className={`${styles.headerMain} !max-w-none`}>
               <div className={styles.titleWrapper}>
-                <h2 className={styles.title} id="capabilities-process-title">
+                <h2 className={styles.title} id="capabilities-title">
                   Our Capabilities
                 </h2>
                 <div className={styles.badge}>
                   <span className={styles.badgeSquare} />
-                  <span>PREVIEW: PROCESS-STYLE UI</span>
+                  <span>CAPABILITIES & SOLUTIONS</span>
                 </div>
               </div>
-              <p className={styles.subtitle}>
-                Complete visual branding, precision manufacturing, and turnkey deployment delivered under one roof across the UAE.
-              </p>
             </div>
           </div>
 

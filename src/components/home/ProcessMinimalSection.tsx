@@ -50,23 +50,23 @@ const processSteps = [
 export function ProcessMinimalSection() {
   return (
     <section
-      id="process-minimal"
+      id="process"
       className="relative bg-[#F9F8F5] py-20 sm:py-24 lg:py-28 border-t border-[#1A1A18]/10"
-      aria-labelledby="process-minimal-title"
+      aria-labelledby="process-title"
     >
       <div className="homepage-shell">
         <div className="mb-10 sm:mb-12">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F26522]">
             <span className="h-1.5 w-1.5 rounded-full bg-[#F26522]" />
-            Preview: Capability-Style UI
+            Working Process
           </p>
           <h2
-            id="process-minimal-title"
+            id="process-title"
             className="mt-3 font-display text-3xl font-semibold tracking-[-0.04em] text-[#171715] sm:text-4xl lg:text-5xl leading-[1.08]"
           >
             How We Work
           </h2>
-          <p className="mt-3 max-w-2xl text-base text-[#626760] font-normal leading-relaxed">
+          <p className="mt-3 max-w-none text-base text-[#626760] font-normal leading-relaxed">
             Four disciplined phases. In-house manufacturing. Zero handoffs from concept to turnkey installation across the UAE.
           </p>
           <span className="mt-4 block h-0.5 w-12 bg-[#F26522]" />
