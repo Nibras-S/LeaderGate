@@ -25,8 +25,8 @@ export default function HomePage() {
         <TrustedClientsSection variant="mobile-only" />
         <ProjectsSection />
         <ServicesGallerySection />
-        <ExperienceSection />
         <ProcessMinimalSection />
+        <ExperienceSection />
         <FinalCTASection />
       </main>
       <Footer appearance="light" />
