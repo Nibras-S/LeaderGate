@@ -100,7 +100,7 @@ export function FormCalculator() {
           <dl className={styles.costs}>{quote.lines.map((line) => <div key={line.label}><dt>{line.label}</dt><dd>{money.format(line.amount)}</dd></div>)}</dl>
           <h3>Your selections</h3><dl className={styles.review}>{rows.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
           <p className={styles.disclaimer}>Indicative estimate based on our configured pricing, not an official quote. Activity approvals, emirate-specific fees, actual rent and authority requirements may change the total. This is not legal or government advice.</p>
-          <div className={styles.actions}><button type="button" className={styles.back} onClick={() => { setQuote(null); setStep(5); }}>Edit answers</button><button type="button" className={styles.primary} onClick={() => setQuoteRequested(true)}><Check size={18} weight="bold" />Request detailed quote</button></div>
+          <div className={styles.actions}><button type="button" className={styles.back} onClick={() => { setQuote(null); setStep(5); }}>Edit answers</button><button type="button" className={styles.primary} onClick={() => setQuoteRequested(true)}><Check size={18} weight="bold" />Request quote</button></div>
           <div className={styles.resultUtilities}>
             <button type="button" className={styles.restart} onClick={() => { setProfile({}); setQuote(null); setStep(0); setError(""); setStarted(false); setQuoteRequested(false); window.scrollTo({ top: 0, left: 0 }); }}>Start a new estimate</button>
             <button type="button" className={styles.printButton} onClick={() => window.print()}><Printer size={16} />Print estimate</button>
