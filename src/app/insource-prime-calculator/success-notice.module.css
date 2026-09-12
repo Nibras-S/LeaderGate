@@ -1,0 +1,17 @@
+.notice{position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(380px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:32px 28px 26px;border:1px solid #e3e9ed;border-radius:24px;background:#fff;color:#192c41;text-align:center;font-family:inherit;box-shadow:0 16px 55px #223c5524;animation:appear .38s cubic-bezier(.2,.8,.2,1) both}
+.notice::backdrop{background:rgba(31,49,68,.1);backdrop-filter:blur(2px)}
+.close{position:absolute;right:12px;top:12px;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:#687b89;cursor:pointer}
+.close:hover{background:#f0f5f6}
+.successIcon{position:relative;display:grid;place-items:center;margin:0 auto 20px;width:66px;height:66px;border-radius:50%;background:#e8f7f0;color:#218362}
+.successIcon::before{content:"";position:absolute;inset:-7px;border:1px solid #77c4a6;border-radius:50%;animation:ripple .9s ease-out both;pointer-events:none}
+.successIcon svg{animation:checkIn .45s .12s cubic-bezier(.2,1.4,.4,1) both}
+.notice h2{margin:0 0 10px;font-size:23px;line-height:1.25;letter-spacing:-.025em;font-weight:600}
+.notice p{margin:0;color:#607181;font-size:14px;line-height:1.7}
+.done{width:100%;min-height:44px;margin-top:24px;border:0;border-radius:12px;background:#243b64;color:white;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.done:hover{background:#304e80}
+.notice button:focus-visible{outline:3px solid #71b5cc;outline-offset:3px}
+@keyframes appear{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes checkIn{from{opacity:0;transform:scale(.5) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes ripple{from{opacity:.65;transform:scale(.75)}to{opacity:0;transform:scale(1.4)}}
+@media(prefers-reduced-motion:reduce){.notice,.successIcon svg,.successIcon::before{animation:none}.successIcon::before{display:none}}
+@media print{.notice{display:none}.notice::backdrop{background:transparent;backdrop-filter:none}}
