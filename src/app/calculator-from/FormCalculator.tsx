@@ -44,6 +44,7 @@ export function FormCalculator() {
   const [profile, setProfile] = useState<BusinessProfile>({});
   const [quote, setQuote] = useState<Quote | null>(null);
   const [error, setError] = useState("");
+  const [quoteRequested, setQuoteRequested] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(false);
   useEffect(() => {
@@ -99,8 +100,11 @@ export function FormCalculator() {
           <dl className={styles.costs}>{quote.lines.map((line) => <div key={line.label}><dt>{line.label}</dt><dd>{money.format(line.amount)}</dd></div>)}</dl>
           <h3>Your selections</h3><dl className={styles.review}>{rows.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
           <p className={styles.disclaimer}>Indicative estimate based on our configured pricing, not an official quote. Activity approvals, emirate-specific fees, actual rent and authority requirements may change the total. This is not legal or government advice.</p>
-          <div className={styles.actions}><button type="button" className={styles.back} onClick={() => { setQuote(null); setStep(5); }}>Edit answers</button><button type="button" className={styles.primary} onClick={() => window.print()}><Printer size={18} />Print estimate</button></div>
-          <button type="button" className={styles.restart} onClick={() => { setProfile({}); setQuote(null); setStep(0); setError(""); setStarted(false); window.scrollTo({ top: 0, left: 0 }); }}>Start a new estimate</button>
+          <div className={styles.actions}><button type="button" className={styles.back} onClick={() => { setQuote(null); setStep(5); }}>Edit answers</button><button type="button" className={styles.primary} onClick={() => setQuoteRequested(true)}><Check size={18} weight="bold" />Request detailed quote</button></div>
+          <div className={styles.resultUtilities}>
+            <button type="button" className={styles.restart} onClick={() => { setProfile({}); setQuote(null); setStep(0); setError(""); setStarted(false); setQuoteRequested(false); window.scrollTo({ top: 0, left: 0 }); }}>Start a new estimate</button>
+            <button type="button" className={styles.printButton} onClick={() => window.print()}><Printer size={16} />Print estimate</button>
+          </div>
         </div> : <>
           <div className={styles.progressLabel}><span>{step < 5 ? `STEP ${step + 1} OF 5` : "READY TO CALCULATE"}</span><span>{step < 5 ? steps[step] : "Review"}</span></div>
           <progress className={styles.progress} value={step} max={5} aria-label="Completed steps" />
@@ -121,6 +125,14 @@ export function FormCalculator() {
         </>}
       </section>
     </div>
+    {quoteRequested && <div className={styles.successBackdrop} role="presentation" onMouseDown={() => setQuoteRequested(false)}>
+      <section className={styles.successModal} role="dialog" aria-modal="true" aria-labelledby="quote-requested-title" onMouseDown={(event) => event.stopPropagation()}>
+        <div className={styles.successTick} aria-hidden="true"><Check size={32} weight="bold" /></div>
+        <h2 id="quote-requested-title">Request received</h2>
+        <p>Your information has been captured. The Insource Prime team will contact you shortly to discuss your detailed quote.</p>
+        <button type="button" className={styles.primary} onClick={() => setQuoteRequested(false)}>Done</button>
+      </section>
+    </div>}
     <footer className={styles.footer}>Insource Prime · UAE business setup planning<span>Estimates are indicative and subject to confirmation.</span></footer>
   </main>;
 }

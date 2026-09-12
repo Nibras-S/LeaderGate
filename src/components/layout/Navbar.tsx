@@ -10,6 +10,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 
 const menuItems = [
   { label: "Home", href: "#hero" },
+  { label: "Cost Calculator", href: "/calculator-from" },
   // Additional nav items will be enabled once sections are production-ready
 ];
 
@@ -120,7 +121,19 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
           )}
 
           {/* Hamburger — Far right (clean 3 lines like reference) */}
-          <button
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              href="/calculator-from"
+              className={`inline-flex h-10 items-center rounded-full px-4 text-xs font-bold uppercase tracking-[0.12em] transition-all hover:-translate-y-0.5 sm:px-5 ${
+                usesDarkInk
+                  ? "bg-[#1A1A18] text-white shadow-[0_8px_22px_rgba(15,15,13,0.16)] hover:bg-[var(--color-orange)]"
+                  : "border border-white/45 bg-white/12 text-white backdrop-blur-md hover:bg-white hover:text-[#1A1A18]"
+              }`}
+            >
+              <span className="sm:hidden">Calculate</span>
+              <span className="hidden sm:inline">Cost Calculator</span>
+            </Link>
+            <button
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open navigation menu"
@@ -132,7 +145,8 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
             <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
             <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
             <span className="h-[2px] w-6 sm:w-7 bg-current rounded-full transition-transform" />
-          </button>
+            </button>
+          </div>
         </div>
       </header>
 
