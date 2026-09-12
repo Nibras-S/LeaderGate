@@ -1,15 +1,18 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import designAndDeploymentImage from "../../../desing and deploymnet.png";
+import printingImage from "../../../printng.png";
 import styles from "./ProcessSection.module.css";
 
 interface CapabilityItem {
   step: string;
   title: string;
   desc: string;
-  image: string;
+  image: string | StaticImageData;
   imageAlt: string;
+  imagePosition?: string;
 }
 
 const capabilities: CapabilityItem[] = [
@@ -17,29 +20,30 @@ const capabilities: CapabilityItem[] = [
     step: "(CAPABILITY – 01)",
     title: "Design & Brand Development",
     desc: "Strategic brand consultation, 3D visual concepts, engineering shop drawings, and production-ready architectural solutions.",
-    image: "/images/about/fabrication-cad.jpg",
-    imageAlt: "Design and technical brand engineering at Leader Gate",
+    image: "/images/cap-design.png",
+    imageAlt: "Leader Gate design studio — brand development and engineering shop drawings",
   },
   {
     step: "(CAPABILITY – 02)",
     title: "Signage & Fabrication",
     desc: "Illuminated signs, 3D channel letters, architectural monoliths, ACP cladding, and comprehensive wayfinding systems built in-house.",
-    image: "/images/about/fabrication-laser.jpg",
-    imageAlt: "Precision laser metal fabrication and channel letter manufacturing",
+    image: "/images/cap-fabrication.png",
+    imageAlt: "Leader Gate fiber laser cutting machine fabricating a metal sign in-house",
   },
   {
     step: "(CAPABILITY – 03)",
     title: "Printing & Graphics",
     desc: "Large-format digital printing, architectural wall & window vinyls, directional banners, and durable exhibition displays.",
-    image: "/images/about/fabrication-cnc.jpg",
-    imageAlt: "Large-format printing and CNC precision processing",
+    image: printingImage,
+    imageAlt: "Leader Gate printing and graphics production work",
   },
   {
     step: "(CAPABILITY – 04)",
     title: "Installation & Deployment",
     desc: "Site surveys, licensed crane rigging, multi-site corporate rollouts, nationwide UAE delivery, and preventative maintenance.",
-    image: "/images/about/fabrication-craftsman.jpg",
-    imageAlt: "Turnkey installation and expert craftsmanship across the UAE",
+    image: designAndDeploymentImage,
+    imageAlt: "Leader Gate signage installation and deployment work",
+    imagePosition: "70% center",
   },
 ];
 
@@ -192,6 +196,7 @@ export function CapabilitiesProcessSection() {
                   src={capabilities[0].image}
                   alt={capabilities[0].imageAlt}
                   fill
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover"
                 />
@@ -262,6 +267,7 @@ export function CapabilitiesProcessSection() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover"
+                  style={{ objectPosition: capabilities[3].imagePosition }}
                 />
               </div>
               <div
