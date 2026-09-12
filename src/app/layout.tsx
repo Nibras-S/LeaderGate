@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { dmSans, manrope, inter } from "@/lib/fonts";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
@@ -41,6 +42,10 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <Script
+          src="https://mcp.figma.com/mcp/html-to-design/capture.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
