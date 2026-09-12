@@ -55,6 +55,7 @@
   .page:not(.started) .introVisual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 58%,#f5f8fb 100%)}
   .page:not(.started) .introVisual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 53%;mix-blend-mode:multiply}
   .page:not(.started) .card,.page:not(.started) .footer{display:none}
+  .page:not(.started)::after{content:"";position:fixed;z-index:44;left:0;right:0;bottom:0;height:110px;pointer-events:none;background:linear-gradient(180deg,rgba(245,248,251,0),#f5f8fb 42%)}
   .startButton{position:fixed;z-index:45;display:flex;align-items:center;justify-content:center;gap:10px;left:16px;right:16px;bottom:max(14px,env(safe-area-inset-bottom));width:calc(100% - 32px);min-height:54px;padding:14px 20px;border:0;border-radius:13px;background:#205e91;color:white;font:inherit;font-size:15px;font-weight:650;box-shadow:0 12px 30px rgba(25,72,108,.22);cursor:pointer}
   .started .intro{display:none}
   .started .layout{padding:0;display:block}
