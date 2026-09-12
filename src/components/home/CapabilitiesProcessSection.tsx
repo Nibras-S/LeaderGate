@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
 import designAndDeploymentImage from "../../../desing and deploymnet.png";
 import printingImage from "../../../printng.png";
+import signageImage from "../../../sinagage.png";
 import styles from "./ProcessSection.module.css";
 
 interface CapabilityItem {
@@ -27,8 +28,8 @@ const capabilities: CapabilityItem[] = [
     step: "(CAPABILITY – 02)",
     title: "Signage & Fabrication",
     desc: "Illuminated signs, 3D channel letters, architectural monoliths, ACP cladding, and comprehensive wayfinding systems built in-house.",
-    image: "/images/cap-fabrication.png",
-    imageAlt: "Leader Gate fiber laser cutting machine fabricating a metal sign in-house",
+    image: signageImage,
+    imageAlt: "Leader Gate signage and fabrication work",
   },
   {
     step: "(CAPABILITY – 03)",
