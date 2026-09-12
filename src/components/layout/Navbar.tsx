@@ -121,18 +121,7 @@ export function Navbar({ appearance = "dark" }: NavbarProps) {
           )}
 
           {/* Hamburger — Far right (clean 3 lines like reference) */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link
-              href="/calculator-from"
-              className={`inline-flex h-10 items-center rounded-full px-4 text-xs font-bold uppercase tracking-[0.12em] transition-all hover:-translate-y-0.5 sm:px-5 ${
-                usesDarkInk
-                  ? "bg-[#1A1A18] text-white shadow-[0_8px_22px_rgba(15,15,13,0.16)] hover:bg-[var(--color-orange)]"
-                  : "border border-white/45 bg-white/12 text-white backdrop-blur-md hover:bg-white hover:text-[#1A1A18]"
-              }`}
-            >
-              <span className="sm:hidden">Calculate</span>
-              <span className="hidden sm:inline">Cost Calculator</span>
-            </Link>
+          <div className="flex items-center">
             <button
             type="button"
             onClick={() => setMenuOpen(true)}
