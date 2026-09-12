@@ -39,6 +39,7 @@ const descriptions = ["Select the activity closest to your idea.", "Choose a loc
 const money = new Intl.NumberFormat("en-AE", { style: "currency", currency: "AED", maximumFractionDigits: 0 });
 
 export function FormCalculator() {
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [profile, setProfile] = useState<BusinessProfile>({});
   const [quote, setQuote] = useState<Quote | null>(null);
@@ -77,13 +78,15 @@ export function FormCalculator() {
     ["Services", services.filter((item) => profile[item.key]).map((item) => item.label).join(", ") || "None selected"],
   ];
 
-  return <main className={styles.page}>
+  return <main className={`${styles.page} ${started ? styles.started : ""}`}>
     <header className={styles.header}><Image src="/insource-prime-logo.webp" alt="Insource Prime" width={190} height={49} priority /></header>
     <div className={styles.layout}>
       <aside className={styles.intro}>
         <span className={styles.eyebrow}>YOUR NEXT CHAPTER, PLANNED.</span>
         <h1>A clear start.<br />A clearer cost.</h1>
         <p>Turn your business idea into a setup estimate. A few simple choices, one transparent breakdown.</p>
+        <div className={styles.introVisual}><Image src="/calculator-intro-uae.png" alt="Contemporary UAE business district with a pathway leading forward" width={1088} height={1456} priority /></div>
+        <button type="button" className={styles.startButton} onClick={() => { setStarted(true); window.scrollTo({ top: 0, left: 0 }); }}>Calculate my setup <ArrowRight size={18} /></button>
         <ol className={styles.steps}>{steps.map((label, index) => <li key={label} aria-current={!quote && index === step ? "step" : undefined} className={index <= step ? styles.reached : ""}><span>{index < step || quote ? <Check size={15} weight="bold" /> : index + 1}</span>{label}</li>)}</ol>
         <div className={styles.asideNote}><Check size={18} /><div><strong>No sign-up needed</strong><span>Review your estimate instantly.</span></div></div>
       </aside>
@@ -97,7 +100,7 @@ export function FormCalculator() {
           <h3>Your selections</h3><dl className={styles.review}>{rows.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
           <p className={styles.disclaimer}>Indicative estimate based on our configured pricing, not an official quote. Activity approvals, emirate-specific fees, actual rent and authority requirements may change the total. This is not legal or government advice.</p>
           <div className={styles.actions}><button type="button" className={styles.back} onClick={() => { setQuote(null); setStep(5); }}>Edit answers</button><button type="button" className={styles.primary} onClick={() => window.print()}><Printer size={18} />Print estimate</button></div>
-          <button type="button" className={styles.restart} onClick={() => { setProfile({}); setQuote(null); setStep(0); setError(""); }}>Start a new estimate</button>
+          <button type="button" className={styles.restart} onClick={() => { setProfile({}); setQuote(null); setStep(0); setError(""); setStarted(false); window.scrollTo({ top: 0, left: 0 }); }}>Start a new estimate</button>
         </div> : <>
           <div className={styles.progressLabel}><span>{step < 5 ? `STEP ${step + 1} OF 5` : "READY TO CALCULATE"}</span><span>{step < 5 ? steps[step] : "Review"}</span></div>
           <progress className={styles.progress} value={step} max={5} aria-label="Completed steps" />
