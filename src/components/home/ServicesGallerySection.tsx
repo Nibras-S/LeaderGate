@@ -2,21 +2,34 @@
 
 import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import designImage from "../../../public/images/cap-design.png";
+import deploymentImage from "../../../desing and deploymnet.png";
+import printingImage from "../../../printng.png";
+import signageImage from "../../../sinagage.png";
+import showcaseAImage from "../../../a.png";
+import showcaseBImage from "../../../b.png";
+import showcaseCImage from "../../../c.png";
+import showcaseDImage from "../../../d.png";
+import showcaseFImage from "../../../f.png";
+import showcaseHImage from "../../../h.png";
+import showcaseJImage from "../../../j.png";
 
-const IMAGES = [
-  "/images/projects/al-masraf.png",
-  "/images/about/fabrication-laser.jpg",
-  "/images/projects/jaecoo.png",
-  "/images/about/fabrication-cnc.jpg",
-  "/images/projects/sobha.png",
-  "/images/about/fabrication-craftsman.jpg",
-  "/images/projects/dominos.png",
-  "/images/about/fabrication-facility.jpg",
-  "/images/projects/al-madina.png",
-  "/images/about/fabrication-cad.jpg",
-  "/images/projects/chums.png",
+type ServiceImage = string | StaticImageData;
+
+const IMAGES: ServiceImage[] = [
+  showcaseDImage,
+  printingImage,
   "/images/projects/jaecoo-2.png",
+  showcaseAImage,
+  signageImage,
+  showcaseHImage,
+  deploymentImage,
+  showcaseJImage,
+  showcaseFImage,
+  designImage,
+  showcaseCImage,
+  showcaseBImage,
 ];
 
 export function ServicesGallerySection() {
@@ -93,7 +106,7 @@ export function ServicesGallerySection() {
 }
 
 type ColumnProps = {
-  images: string[];
+  images: ServiceImage[];
   y: MotionValue<number>;
 };
 

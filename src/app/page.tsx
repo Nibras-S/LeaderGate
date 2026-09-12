@@ -24,9 +24,9 @@ export default function HomePage() {
         {/* Mobile: placed after Capabilities per user direction */}
         <TrustedClientsSection variant="mobile-only" />
         <ProjectsSection />
+        <ServicesGallerySection />
         <ExperienceSection />
         <ProcessMinimalSection />
-        <ServicesGallerySection />
         <FinalCTASection />
       </main>
       <Footer appearance="light" />
