@@ -90,7 +90,7 @@ export function ExperienceSection() {
             </dl>
 
             {/* Across Industries */}
-            <div id="industries" className="mt-5 border-t border-[#DCDDD6] pt-4">
+            <div id="industries" className="mt-5 hidden border-t border-[#DCDDD6] pt-4 lg:block">
               <h3 className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#171715] mb-2.5">
                 Across industries
               </h3>

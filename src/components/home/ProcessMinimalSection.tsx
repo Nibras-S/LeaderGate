@@ -72,11 +72,37 @@ export function ProcessMinimalSection() {
           <span className="mt-4 block h-0.5 w-12 bg-[#F26522]" />
         </div>
 
-        <div className="divide-y divide-[#1A1A18]/12 lg:grid lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+        {/* Mobile: editorial process list based on the supplied layout reference. */}
+        <div className="lg:hidden">
           {processSteps.map((step) => (
             <article
               key={step.title}
-              className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-5 py-7 first:pt-0 lg:block lg:min-h-[14rem] lg:px-9 lg:py-0 lg:first:pl-0 lg:last:pr-0"
+              className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-x-5 border-t border-[#1A1A18]/12 py-8 first:border-t-0 first:pt-2"
+            >
+              <span
+                className="font-display text-[2.5rem] font-semibold leading-none tracking-[-0.06em] text-[#1A1A18]/15"
+                aria-hidden="true"
+              >
+                {Number(step.step)}
+              </span>
+              <div className="min-w-0 pt-0.5">
+                <h3 className="font-display text-[1.35rem] font-semibold leading-[1.12] tracking-[-0.035em] text-[#171715]">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-[0.95rem] leading-7 text-[#626760]">
+                  {step.desc}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Desktop: preserve the original four-column process layout. */}
+        <div className="hidden divide-[#1A1A18]/12 lg:grid lg:grid-cols-4 lg:divide-x">
+          {processSteps.map((step) => (
+            <article
+              key={step.title}
+              className="block min-h-[14rem] px-9 first:pl-0 last:pr-0"
             >
               <div className="flex items-center gap-2.5">
                 <span className="font-display text-xs font-bold text-[#F26522] tracking-widest uppercase">
